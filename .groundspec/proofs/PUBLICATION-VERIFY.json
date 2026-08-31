@@ -3,10 +3,9 @@
   "node": "PUBLICATION-VERIFY",
   "digest": "76ac8cfc2ea34440022ce8811be9910f25672e19f57a4d03321e38aa56079f89",
   "result": "passed",
-  "recordedAt": "2026-08-31T22:09:36.823816Z",
+  "recordedAt": "2026-08-31T22:20:27.209979Z",
   "evidence": {
     "path": "test-or-verification/commands/V-07.log",
     "digest": "66bed043e836fb6840ac2f1c80e145ca15ae532424c5ce0b40ab0e1d3f763dc0"
-  },
-  "note": "Fail-closed publication audit passed for the complete public candidate set"
+  }
 }

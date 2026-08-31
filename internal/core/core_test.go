@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"os"
 	"path/filepath"
+	"regexp"
 	"runtime"
 	"strings"
 	"testing"
@@ -309,6 +310,100 @@ func TestPB30HelpAndVersionAreInstallSmokeInterfaces(t *testing.T) {
 		if err != nil || code != 0 || !strings.Contains(output.String(), test.contains) {
 			t.Fatalf("Execute(%v) = code %d, output %q, err %v", test.arguments, code, output.String(), err)
 		}
+	}
+}
+
+func TestPB30VersionResolutionSupportsGoInstallAndReleaseBuilds(t *testing.T) {
+	for _, test := range []struct {
+		name          string
+		linkedVersion string
+		moduleVersion string
+		want          string
+	}{
+		{name: "source install", linkedVersion: "dev", moduleVersion: "v0.1.0", want: "v0.1.0"},
+		{name: "release archive", linkedVersion: "v0.2.0", moduleVersion: "v0.1.0", want: "v0.2.0"},
+		{name: "development build", linkedVersion: "dev", moduleVersion: "(devel)", want: "dev"},
+	} {
+		t.Run(test.name, func(t *testing.T) {
+			if got := resolvedVersion(test.linkedVersion, test.moduleVersion); got != test.want {
+				t.Fatalf("resolvedVersion(%q, %q) = %q, want %q", test.linkedVersion, test.moduleVersion, got, test.want)
+			}
+		})
+	}
+}
+
+func TestPB30ReleaseConfigurationMatchesDeclaredTargets(t *testing.T) {
+	_, currentFile, _, ok := runtime.Caller(0)
+	if !ok {
+		t.Fatal("cannot locate test file")
+	}
+	root := filepath.Clean(filepath.Join(filepath.Dir(currentFile), "..", ".."))
+
+	type releaseTarget struct {
+		OS   string `json:"os"`
+		Arch string `json:"arch"`
+		CGO  bool   `json:"cgo"`
+	}
+	var manifest struct {
+		Version int             `json:"version"`
+		Targets []releaseTarget `json:"targets"`
+	}
+	manifestBytes, err := os.ReadFile(filepath.Join(root, "release", "targets.json"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := json.Unmarshal(manifestBytes, &manifest); err != nil {
+		t.Fatal(err)
+	}
+	if manifest.Version != 1 || len(manifest.Targets) == 0 {
+		t.Fatalf("release target manifest = %#v", manifest)
+	}
+
+	releaseBytes, err := os.ReadFile(filepath.Join(root, ".github", "workflows", "release.yml"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	releaseWorkflow := string(releaseBytes)
+	matrixPattern := regexp.MustCompile(`goos: ([a-z0-9]+), goarch: ([a-z0-9]+), format: (?:tar|zip)`)
+	matrixEntries := matrixPattern.FindAllStringSubmatch(releaseWorkflow, -1)
+	if len(matrixEntries) != len(manifest.Targets) {
+		t.Fatalf("release matrix has %d targets, manifest has %d", len(matrixEntries), len(manifest.Targets))
+	}
+	matrix := map[string]bool{}
+	for _, entry := range matrixEntries {
+		matrix[entry[1]+"/"+entry[2]] = true
+	}
+	seen := map[string]bool{}
+	for _, target := range manifest.Targets {
+		id := target.OS + "/" + target.Arch
+		if target.OS == "" || target.Arch == "" || target.CGO || seen[id] || !matrix[id] {
+			t.Fatalf("invalid or unmatched release target: %#v", target)
+		}
+		seen[id] = true
+	}
+	for _, required := range []string{
+		"CGO_ENABLED=0",
+		"internal/core.Version=${version}",
+		"sha256sum * > checksums.txt",
+	} {
+		if !strings.Contains(releaseWorkflow, required) {
+			t.Fatalf("release workflow is missing %q", required)
+		}
+	}
+
+	ciBytes, err := os.ReadFile(filepath.Join(root, ".github", "workflows", "ci.yml"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !strings.Contains(string(ciBytes), "go install ./cmd/groundspec") {
+		t.Fatal("CI does not verify the documented source installation path")
+	}
+	licenseBytes, err := os.ReadFile(filepath.Join(root, "LICENSE"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !strings.HasPrefix(string(licenseBytes), "MIT License\n") {
+		t.Fatal("release source is not MIT licensed")
 	}
 }
 

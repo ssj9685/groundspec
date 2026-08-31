@@ -14,8 +14,8 @@
       },
       "artifact": {
         "name": "groundspec",
-        "sha256": "18cb00f37a3ac00e8f149d7e264dbcf6b606298e3ed71e88e6b861ce7d1b3eda",
-        "size": 3604834
+        "sha256": "c6657f8ca79ad1178aecf5252091232b3e0d3c5f90431642e1ac1017405dbbe0",
+        "size": 3605058
       }
     },
     {
@@ -26,8 +26,8 @@
       },
       "artifact": {
         "name": "groundspec",
-        "sha256": "3c7d2a80afd499bd70e3bd4fc45f0c9291dcb2152fc616cc68fd11f753015f7a",
-        "size": 3838928
+        "sha256": "3e14a6b9d92a7716476eb8b6aa38c3b13156d6f8a0d86d9ec960adceb17691c9",
+        "size": 3847344
       }
     },
     {
@@ -38,7 +38,7 @@
       },
       "artifact": {
         "name": "groundspec",
-        "sha256": "bd43ab25ce2eb30ba7d1c9b9a0aae2cf7a7646a1b6df29580dc0538a77efff36",
+        "sha256": "ee4329ddea3b5e23a43aed060536578a5d7a830236af3159b289704c66a63e3d",
         "size": 3604640
       }
     },
@@ -50,8 +50,8 @@
       },
       "artifact": {
         "name": "groundspec",
-        "sha256": "6edf58b4d98c0f579aa363c6c51824b5a30f2b2bdcf24c04911df812fd2a75e7",
-        "size": 3834016
+        "sha256": "e0d454d58df30f44323545ddacac51cc802d4ea2e9555d13fdb0b6fc739f6f15",
+        "size": 3842208
       }
     },
     {
@@ -62,8 +62,8 @@
       },
       "artifact": {
         "name": "groundspec.exe",
-        "sha256": "4cfce7af0391393075cceda479260914b6aed1ecf465994ff693bc52fe335be1",
-        "size": 3984896
+        "sha256": "777ad15954f0cf91aed939f27ae98c20127fe8701bfc260794b3efdf4c89e904",
+        "size": 3996672
       }
     }
   ],

@@ -8,6 +8,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"runtime/debug"
 	"strings"
 
 	"github.com/ssj9685/groundspec/internal/agent"
@@ -21,6 +22,24 @@ const usageText = "usage: groundspec adapters [--json] | groundspec start <sourc
 const defaultReviewPath = ".groundspec/review.json"
 
 var Version = "dev"
+
+func resolvedVersion(linkedVersion, moduleVersion string) string {
+	if linkedVersion != "" && linkedVersion != "dev" {
+		return linkedVersion
+	}
+	if moduleVersion != "" && moduleVersion != "(devel)" {
+		return moduleVersion
+	}
+	return "dev"
+}
+
+func effectiveVersion() string {
+	moduleVersion := ""
+	if buildInfo, ok := debug.ReadBuildInfo(); ok {
+		moduleVersion = buildInfo.Main.Version
+	}
+	return resolvedVersion(Version, moduleVersion)
+}
 
 type UsageError struct {
 	Message string
@@ -168,7 +187,7 @@ func Execute(arguments []string, cwd string, stdout io.Writer) (int, error) {
 		_, err := fmt.Fprintln(stdout, usageText)
 		return 0, err
 	case "version", "--version":
-		_, err := fmt.Fprintf(stdout, "groundspec %s\n", Version)
+		_, err := fmt.Fprintf(stdout, "groundspec %s\n", effectiveVersion())
 		return 0, err
 	case "adapters":
 		options, err := parseOptions(arguments[1:], map[string]optionKind{"json": booleanOption})

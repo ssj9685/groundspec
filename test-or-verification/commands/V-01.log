@@ -1,6 +1,6 @@
 ?   	github.com/ssj9685/groundspec/cmd/groundspec	[no test files]
-ok  	github.com/ssj9685/groundspec/internal/agent	0.230s
-ok  	github.com/ssj9685/groundspec/internal/core	0.421s
-ok  	github.com/ssj9685/groundspec/internal/intake	1.346s
-ok  	github.com/ssj9685/groundspec/internal/pipeline	0.630s
-ok  	github.com/ssj9685/groundspec/internal/workflow	0.832s
+ok  	github.com/ssj9685/groundspec/internal/agent	(cached)
+ok  	github.com/ssj9685/groundspec/internal/core	0.803s
+ok  	github.com/ssj9685/groundspec/internal/intake	4.319s
+ok  	github.com/ssj9685/groundspec/internal/pipeline	(cached)
+ok  	github.com/ssj9685/groundspec/internal/workflow	(cached)

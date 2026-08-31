@@ -1,12 +1,11 @@
 {
   "version": 1,
   "node": "RELEASE-VERIFY",
-  "digest": "589051c9601ce22ebcb19561987b347e38bd6f7f9c49c9b39bcb908e4a31fd9b",
+  "digest": "b4d5546fb182c42705d3d97e2e4f1d21388cd3222a7bf5a4675f7a7778f12690",
   "result": "passed",
-  "recordedAt": "2026-08-31T22:09:36.523123Z",
+  "recordedAt": "2026-08-31T22:20:27.094002Z",
   "evidence": {
     "path": ".groundspec/evidence/groundspec-release-matrix.json",
-    "digest": "99d9dec8fdd42085cbde39804fcb8beecac8206ac92f6aa088642ddfe4e6d4bf"
-  },
-  "note": "Five CGO-disabled v0.1.0 release targets built and host binary smoked"
+    "digest": "85ecbb5dd75ccafc6d4a981e370efa298e900e02f5c13a6c5f345ac305b3b31d"
+  }
 }

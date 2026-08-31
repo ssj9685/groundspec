@@ -3,10 +3,9 @@
   "node": "REQUIREMENT-PROPOSAL",
   "digest": "b6613263e7e8d10d9b400e91b5acf3ab1cb30443617bc2150e3e7c8452e44254",
   "result": "passed",
-  "recordedAt": "2026-08-31T22:09:36.471369Z",
+  "recordedAt": "2026-08-31T22:20:26.77746Z",
   "evidence": {
     "path": ".groundspec/evidence/proposal-validation.json",
     "digest": "54795be10bd858c5d1d6a9b879b1eebf25cf38d0560206b2b934854d2936c441"
-  },
-  "note": "Provider-neutral proposal validated"
+  }
 }

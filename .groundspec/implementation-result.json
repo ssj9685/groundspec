@@ -13,15 +13,15 @@
     "auth": "authenticated",
     "ready": true
   },
-  "summary": "Implemented two minimal hardening fixes: empty HTML now emits canonical `blocks: []`, and Codex discovery only accepts a confirmed “Logged in using …” status. Added regression tests. Protected files were not edited; existing `.groundspec` changes were preserved.",
+  "summary": "Completed and verified the PB-30 release slice: module-installed binaries resolve their version, release configuration is regression-tested, and protected artifacts remain unchanged. Existing workflow/CLI edits were preserved; release tests were added. Action versions were cross-checked against official GitHub action sources.",
   "artifacts": [
     {
       "path": ".github/workflows/ci.yml",
-      "digest": "d4d55daac044c1e0d34512e7db762dfde48d551b2fda1ac4f1dc4a9dad0aa702"
+      "digest": "519853cecb3a8bf4de41248a80c3d1e3165df800686a45d02fb60c65ec7e8881"
     },
     {
       "path": ".github/workflows/release.yml",
-      "digest": "bf6d3f90f7cb4cd88e75f4b085546c79aec44441051eefa26ea539404cbbf41a"
+      "digest": "016b82bb596184a1aacbf04c71388c93ae8f39a22b476c43d3ecf0812cb99e31"
     },
     {
       "path": ".gitignore",
@@ -117,7 +117,7 @@
     },
     {
       "path": "internal/core/cli.go",
-      "digest": "b7c00d085a9e5dd21f0b6dea24f88202d5b0f63e6a86ec2304b31ed7a7841daa"
+      "digest": "4fb6c4c0a1eef82d4aa8d243b4613a0d701ee04fffc44712aeebe347c436688a"
     },
     {
       "path": "internal/core/core.go",
@@ -125,7 +125,7 @@
     },
     {
       "path": "internal/core/core_test.go",
-      "digest": "a34a8ae5819e40ad863c25dcf2a14289e2b09a4274bcda8d277693efae7c1276"
+      "digest": "ff497cf30a49678f9da3587811488db8869cd537884e74bd2196b6a8748b5f44"
     },
     {
       "path": "internal/intake/intake.go",
@@ -302,71 +302,37 @@
   ],
   "changes": [
     {
-      "path": "internal/agent/agent.go",
+      "path": "internal/core/core_test.go",
       "kind": "modified",
-      "beforeDigest": "51d524c0c25b5e5d0d5c62f4951a601816139b5d7e967193912caf4a6f35597f",
-      "afterDigest": "d1babd2db3349556d63de95a87304d6b441a3478fd40ebba3198b707432261a6"
-    },
-    {
-      "path": "internal/agent/agent_test.go",
-      "kind": "modified",
-      "beforeDigest": "d214e36979f05d6589efc749b7cd6235681eeb5e13d60b7c56ab2424796a3911",
-      "afterDigest": "b8367e7c056d16f6d7fe2a87ff7e4fe0e911973f4d32dc991378310f20dd9743"
-    },
-    {
-      "path": "internal/intake/intake.go",
-      "kind": "modified",
-      "beforeDigest": "508692537fc6cde469d9a2411801cd12f982d37d3e5bbd01bad2bdcce7f63421",
-      "afterDigest": "f971ea44388bb9b6632a0a6648a2515926b0c31b06efb1c63d72b5121d2dab4d"
-    },
-    {
-      "path": "internal/intake/intake_test.go",
-      "kind": "modified",
-      "beforeDigest": "48d3db4478e274ab79c99c04107b9e7a5a4206b578401deb1ca008e8ca1db63b",
-      "afterDigest": "94f74e0c1bd3f470c2abdab1cec26baf420bfbe7c494e60657d688f7a5001894"
+      "beforeDigest": "10f39698e2b9abf3a5b4f0b3dacd7eacf594f7dc389a543336c03bd72f24b58c",
+      "afterDigest": "ff497cf30a49678f9da3587811488db8869cd537884e74bd2196b6a8748b5f44"
     }
   ],
   "reportedChecks": [
     {
-      "command": "GOCACHE=/tmp/groundspec-go-cache go test ./...",
-      "result": "Passed"
+      "command": "go test ./...",
+      "result": "Passed using task-local Go caches."
     },
     {
-      "command": "GOCACHE=/tmp/groundspec-go-cache go vet ./...",
-      "result": "Passed"
+      "command": "go vet ./... \u0026\u0026 go build ./cmd/groundspec",
+      "result": "Passed using task-local Go caches; binary output directed to /tmp."
     },
     {
-      "command": "GOCACHE=/tmp/groundspec-go-cache go build ./cmd/groundspec",
-      "result": "Passed; emitted a non-fatal sandbox cache warning"
+      "command": "release version-stamp smoke test",
+      "result": "Passed; output: groundspec v0.0.0-test."
     },
     {
-      "command": "./groundspec --help",
-      "result": "Passed; generated binary removed afterward"
-    },
-    {
-      "command": "bun run scripts/verify-contract-pin.js",
-      "result": "Passed"
-    },
-    {
-      "command": "bun run scripts/contracts-verify.js",
-      "result": "Passed"
-    },
-    {
-      "command": "bun run scripts/contracts-impact.smoke.js",
-      "result": "Passed"
-    },
-    {
-      "command": "bun run scripts/publication-audit.js",
-      "result": "Passed"
+      "command": "V-04 through V-07 Bun verification scripts",
+      "result": "All passed, including contract pin, contract links/impact, and publication audit."
     },
     {
       "command": "npm test",
-      "result": "Passed: 20 tests, 1 platform-specific skip"
+      "result": "Passed: 20 tests, 1 platform-specific skip."
     },
     {
-      "command": "git diff --check",
-      "result": "Passed"
+      "command": "git diff --check and protected artifact SHA-256 checks",
+      "result": "Passed; approved proposal, review, project context, and protected documents are unchanged."
     }
   ],
-  "recordedAt": "2026-08-31T22:08:52.88455Z"
+  "recordedAt": "2026-08-31T22:18:28.594005Z"
 }

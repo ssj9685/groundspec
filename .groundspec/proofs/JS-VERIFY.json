@@ -3,10 +3,9 @@
   "node": "JS-VERIFY",
   "digest": "7d606491e51b76a77823969595393b07552fa21dcdce91777c02bbcf62de3237",
   "result": "passed",
-  "recordedAt": "2026-08-31T22:09:36.503177Z",
+  "recordedAt": "2026-08-31T22:20:26.978272Z",
   "evidence": {
     "path": ".groundspec/evidence/js-tests.tap",
-    "digest": "822212417236186d19e379ce57f1d877614390ed6c148ecec4eeb022f4017fdf"
-  },
-  "note": "JavaScript conformance reference passed"
+    "digest": "dd164b820a4a2b7978fa0627540c17774ae1ff5efd90a6cf1915e8d38fcb2448"
+  }
 }

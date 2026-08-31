@@ -3,10 +3,9 @@
   "node": "REQUIREMENT-REVIEW",
   "digest": "bb9fb33b475a8b6e01b8d21a24c4c0be9f407fecc4c4aec23c687c69a4ed7b43",
   "result": "passed",
-  "recordedAt": "2026-08-31T22:09:36.481586Z",
+  "recordedAt": "2026-08-31T22:20:26.855198Z",
   "evidence": {
     "path": ".groundspec/evidence/workflow-status.json",
     "digest": "85e024743a2e38cb55c94f9c87000c7a325168cbfa0b38aa28a3df94a1c5f1af"
-  },
-  "note": "31 requirements reviewed and ready"
+  }
 }
