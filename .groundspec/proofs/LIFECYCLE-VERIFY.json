@@ -1,12 +1,12 @@
 {
   "version": 1,
   "node": "LIFECYCLE-VERIFY",
-  "digest": "b91359a42c017581acb985600a20b6b37ebfdbeddd382b427cd26c1b072a4ec5",
+  "digest": "ab6377e261c87e7edb4a1edcf1711ac1d384d0ce4b2c23385411e7acd0498075",
   "result": "passed",
-  "recordedAt": "2026-08-31T21:12:09.348858Z",
+  "recordedAt": "2026-08-31T22:09:36.833541Z",
   "evidence": {
     "path": ".groundspec/verification.json",
-    "digest": "643f55cb0c316c307517678e593e286100972b782be276a6cb96ee1f7c9a0b97"
+    "digest": "6cdfebe9a7f58df9133f4267ab8f15c727ec682797e3bfcd48edba5a98c239c5"
   },
   "note": "Reviewed implementation and all eight required commands passed"
 }

@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "candidate": "v0.1.0-rc.1",
+  "candidate": "v0.1.0",
   "hostSmoke": {
-    "version": "groundspec v0.1.0-rc.1",
+    "version": "groundspec v0.1.0",
     "help": "usage: groundspec adapters [--json] | groundspec start <source> --output <directory> [--adapter id] [--json] | groundspec init <source> [--output directory] [--adapter id] [--json] | groundspec ingest <source> [--json] | groundspec draft <bundle> --output <proposal> [--adapter id] [--json] | groundspec proposal validate <proposal> [--json] | groundspec review <proposal> [--review path] (--accept id | --reject id | --resolve id --answer text) [--note text] [--json] | groundspec status <proposal> [--review path] [--json] | groundspec materialize <proposal> [--review path] [--output path] [--adapter id] [--json] | groundspec implement <plan> [--output path] [--adapter id] [--json] | groundspec verify <plan> [--implementation path] [--output path] [--json] | groundspec lifecycle [--proposal path] [--review path] [--plan path] [--implementation path] [--verification path] [--graph path] [--json] | groundspec check [--graph path] [--json] | groundspec attest <node> --result passed|failed [--evidence path] [--note text] [--graph path] [--json]"
   },
   "targets": [
@@ -14,7 +14,7 @@
       },
       "artifact": {
         "name": "groundspec",
-        "sha256": "47e08ccb731939205783ef0d61b3d1de393234bad28f05f3e27561698d8b2d00",
+        "sha256": "18cb00f37a3ac00e8f149d7e264dbcf6b606298e3ed71e88e6b861ce7d1b3eda",
         "size": 3604834
       }
     },
@@ -26,7 +26,7 @@
       },
       "artifact": {
         "name": "groundspec",
-        "sha256": "9c4cddbf8f387cc4385b141f9f2d26a5b8e062ffc6ddf699c61ba42e50110f9f",
+        "sha256": "3c7d2a80afd499bd70e3bd4fc45f0c9291dcb2152fc616cc68fd11f753015f7a",
         "size": 3838928
       }
     },
@@ -38,7 +38,7 @@
       },
       "artifact": {
         "name": "groundspec",
-        "sha256": "78696e8024d29b1abcbb7ac4c64b6ac55078c56af86a351df977b2234698a3e6",
+        "sha256": "bd43ab25ce2eb30ba7d1c9b9a0aae2cf7a7646a1b6df29580dc0538a77efff36",
         "size": 3604640
       }
     },
@@ -50,7 +50,7 @@
       },
       "artifact": {
         "name": "groundspec",
-        "sha256": "c5bbf9b46065f776d5da35387a13be5c2544846e6fd4044c21737f4fae1d4895",
+        "sha256": "6edf58b4d98c0f579aa363c6c51824b5a30f2b2bdcf24c04911df812fd2a75e7",
         "size": 3834016
       }
     },
@@ -62,8 +62,8 @@
       },
       "artifact": {
         "name": "groundspec.exe",
-        "sha256": "5330ff819600e17667d9b9307afacaf103c6dbcecc5c8252ef406e4b56f6e007",
-        "size": 3984384
+        "sha256": "4cfce7af0391393075cceda479260914b6aed1ecf465994ff693bc52fe335be1",
+        "size": 3984896
       }
     }
   ],

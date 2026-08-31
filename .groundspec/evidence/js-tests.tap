@@ -2,127 +2,127 @@ TAP version 13
 # Subtest: TV-08: check exposes stable JSON and exit codes
 ok 1 - TV-08: check exposes stable JSON and exit codes
   ---
-  duration_ms: 274.397458
+  duration_ms: 276.241292
   type: 'test'
   ...
 # Subtest: TV-08: invalid graphs exit with code 2
 ok 2 - TV-08: invalid graphs exit with code 2
   ---
-  duration_ms: 31.085
+  duration_ms: 31.048458
   type: 'test'
   ...
 # Subtest: TV-10: JavaScript CLI matches the shared conformance exit code
 ok 3 - TV-10: JavaScript CLI matches the shared conformance exit code
   ---
-  duration_ms: 34.299375
+  duration_ms: 31.526583
   type: 'test'
   ...
 # Subtest: TV-09: frame digests are language-neutral and byte-exact
 ok 4 - TV-09: frame digests are language-neutral and byte-exact
   ---
-  duration_ms: 1.432333
+  duration_ms: 1.025583
   type: 'test'
   ...
 # Subtest: TV-10: JavaScript matches the shared conformance fixture
 ok 5 - TV-10: JavaScript matches the shared conformance fixture
   ---
-  duration_ms: 9.736084
+  duration_ms: 5.485541
   type: 'test'
   ...
 # Subtest: TV-09: non-UTF-8 repository entry names are rejected
 ok 6 - TV-09: non-UTF-8 repository entry names are rejected # SKIP filesystem rejects non-UTF-8 names before the checker
   ---
-  duration_ms: 1.531458
+  duration_ms: 1.295292
   type: 'test'
   ...
 # Subtest: TV-01 and TV-02: a missing proof becomes fresh after attestation
 ok 7 - TV-01 and TV-02: a missing proof becomes fresh after attestation
   ---
-  duration_ms: 5.074833
+  duration_ms: 5.459458
   type: 'test'
   ...
 # Subtest: TV-03: changing an upstream input makes dependent proof stale
 ok 8 - TV-03: changing an upstream input makes dependent proof stale
   ---
-  duration_ms: 2.138125
+  duration_ms: 2.350416
   type: 'test'
   ...
 # Subtest: TV-04: a fresh failed attestation keeps the graph failed
 ok 9 - TV-04: a fresh failed attestation keeps the graph failed
   ---
-  duration_ms: 1.454208
+  duration_ms: 1.465375
   type: 'test'
   ...
 # Subtest: TV-05: missing dependencies and cycles are rejected
 ok 10 - TV-05: missing dependencies and cycles are rejected
   ---
-  duration_ms: 1.116334
+  duration_ms: 1.115709
   type: 'test'
   ...
 # Subtest: TV-06: paths outside the project root are rejected
 ok 11 - TV-06: paths outside the project root are rejected
   ---
-  duration_ms: 0.895917
+  duration_ms: 0.841708
   type: 'test'
   ...
 # Subtest: TV-06: attestation evidence cannot escape the project root
 ok 12 - TV-06: attestation evidence cannot escape the project root
   ---
-  duration_ms: 1.057458
+  duration_ms: 1.215958
   type: 'test'
   ...
 # Subtest: TV-06: a proof cannot be stored inside its own input directory
 ok 13 - TV-06: a proof cannot be stored inside its own input directory
   ---
-  duration_ms: 0.837708
+  duration_ms: 0.825209
   type: 'test'
   ...
 # Subtest: TV-07: changed or missing evidence makes a proof stale
 ok 14 - TV-07: changed or missing evidence makes a proof stale
   ---
-  duration_ms: 3.200416
+  duration_ms: 1.953
   type: 'test'
   ...
 # Subtest: PB-29: publication candidates require an explicit allowlist entry
 ok 15 - PB-29: publication candidates require an explicit allowlist entry
   ---
-  duration_ms: 0.368917
+  duration_ms: 0.6875
   type: 'test'
   ...
 # Subtest: PB-29: malformed publication policy fails closed
 ok 16 - PB-29: malformed publication policy fails closed
   ---
-  duration_ms: 0.298667
+  duration_ms: 0.367416
   type: 'test'
   ...
 # Subtest: PB-29: publication audit rejects binary content
 ok 17 - PB-29: publication audit rejects binary content
   ---
-  duration_ms: 0.073417
+  duration_ms: 0.0845
   type: 'test'
   ...
 # Subtest: PB-29: publication audit rejects invalid UTF-8 text
 ok 18 - PB-29: publication audit rejects invalid UTF-8 text
   ---
-  duration_ms: 0.05625
+  duration_ms: 0.06425
   type: 'test'
   ...
 # Subtest: PB-29: publication audit rejects oversized allowlisted files before upload
 ok 19 - PB-29: publication audit rejects oversized allowlisted files before upload
   ---
-  duration_ms: 127.774667
+  duration_ms: 126.430625
   type: 'test'
   ...
 # Subtest: PB-29: persisted adapter records allow only portable provenance
 ok 20 - PB-29: persisted adapter records allow only portable provenance
   ---
-  duration_ms: 0.250375
+  duration_ms: 0.215709
   type: 'test'
   ...
 # Subtest: PB-29: publication audit rejects symlinks without following them
 ok 21 - PB-29: publication audit rejects symlinks without following them
   ---
-  duration_ms: 120.441208
+  duration_ms: 122.322375
   type: 'test'
   ...
 1..21
@@ -133,4 +133,4 @@ ok 21 - PB-29: publication audit rejects symlinks without following them
 # cancelled 0
 # skipped 1
 # todo 0
-# duration_ms 394.182208
+# duration_ms 391.858542

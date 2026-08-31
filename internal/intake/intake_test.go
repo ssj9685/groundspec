@@ -148,6 +148,28 @@ func TestPB01HTMLAttributesCannotLeakIntoVisibleBlocks(t *testing.T) {
 	assertBlocks(t, bundle.Blocks, want)
 }
 
+func TestPB02HTMLWithoutVisibleTextKeepsCanonicalEmptyBlockArray(t *testing.T) {
+	root := t.TempDir()
+	if err := os.WriteFile(filepath.Join(root, "empty.html"), []byte("<!doctype html><html><head><title>Hidden</title></head><body><!-- no visible text --></body></html>"), 0o644); err != nil {
+		t.Fatal(err)
+	}
+
+	bundle, err := Ingest(root, "empty.html")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if bundle.Blocks == nil || len(bundle.Blocks) != 0 {
+		t.Fatalf("blocks = %#v, want a non-nil empty array", bundle.Blocks)
+	}
+	encoded, err := json.Marshal(bundle)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !strings.Contains(string(encoded), `"blocks":[]`) {
+		t.Fatalf("canonical bundle encoded an invalid empty block collection: %s", encoded)
+	}
+}
+
 func TestTV14MarkdownTypedBlocksAndSections(t *testing.T) {
 	bundle, err := Ingest(fixtureRoot(t), "sample.md")
 	if err != nil {

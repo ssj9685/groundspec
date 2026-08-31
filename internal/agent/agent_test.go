@@ -114,6 +114,16 @@ func TestPB14DiscoveryRequiresCompatibleVersionAndConfirmedLogin(t *testing.T) {
 			outputs: map[string][]byte{"--version": []byte("codex-cli 1.2.3\n"), "login status": []byte("Not logged in\n")},
 			errors:  map[string]error{},
 		},
+		"false-looking login": {
+			path:    "/tools/codex",
+			outputs: map[string][]byte{"--version": []byte("codex-cli 1.2.3\n"), "login status": []byte("Logged in: false\n")},
+			errors:  map[string]error{},
+		},
+		"missing login mechanism": {
+			path:    "/tools/codex",
+			outputs: map[string][]byte{"--version": []byte("codex-cli 1.2.3\n"), "login status": []byte("Logged in using   \n")},
+			errors:  map[string]error{},
+		},
 	} {
 		t.Run(name, func(t *testing.T) {
 			descriptors := discoverWith(context.Background(), runner)

@@ -2,7 +2,7 @@
   "version": 1,
   "plan": {
     "path": ".groundspec/development-plan.json",
-    "digest": "ea0d7a8710ded5cf6f1e66de89ebc2b7fe2d8725ff861910d7a2630cda927f40"
+    "digest": "a67c2223726c893dcdf05b0e95fcff0e5639b84008c58dbe7a739d3b416a9b17"
   },
   "adapter": {
     "id": "codex-cli",
@@ -13,7 +13,7 @@
     "auth": "authenticated",
     "ready": true
   },
-  "summary": "The approved implementation was already present and matched all three approved artifact digests, so no source changes were necessary. The pre-existing `.github/workflows/ci.yml` modification was preserved. Lifecycle correctly reports that modification as stale implementation evidence.",
+  "summary": "Implemented two minimal hardening fixes: empty HTML now emits canonical `blocks: []`, and Codex discovery only accepts a confirmed “Logged in using …” status. Added regression tests. Protected files were not edited; existing `.groundspec` changes were preserved.",
   "artifacts": [
     {
       "path": ".github/workflows/ci.yml",
@@ -109,11 +109,11 @@
     },
     {
       "path": "internal/agent/agent.go",
-      "digest": "51d524c0c25b5e5d0d5c62f4951a601816139b5d7e967193912caf4a6f35597f"
+      "digest": "d1babd2db3349556d63de95a87304d6b441a3478fd40ebba3198b707432261a6"
     },
     {
       "path": "internal/agent/agent_test.go",
-      "digest": "d214e36979f05d6589efc749b7cd6235681eeb5e13d60b7c56ab2424796a3911"
+      "digest": "b8367e7c056d16f6d7fe2a87ff7e4fe0e911973f4d32dc991378310f20dd9743"
     },
     {
       "path": "internal/core/cli.go",
@@ -129,11 +129,11 @@
     },
     {
       "path": "internal/intake/intake.go",
-      "digest": "508692537fc6cde469d9a2411801cd12f982d37d3e5bbd01bad2bdcce7f63421"
+      "digest": "f971ea44388bb9b6632a0a6648a2515926b0c31b06efb1c63d72b5121d2dab4d"
     },
     {
       "path": "internal/intake/intake_test.go",
-      "digest": "48d3db4478e274ab79c99c04107b9e7a5a4206b578401deb1ca008e8ca1db63b"
+      "digest": "94f74e0c1bd3f470c2abdab1cec26baf420bfbe7c494e60657d688f7a5001894"
     },
     {
       "path": "internal/pipeline/pipeline.go",
@@ -300,19 +300,48 @@
       "digest": "e8d8212d6e23d85459d694c5887c96ef2b7a336b5bfa5a9513e9507044a2b3dd"
     }
   ],
-  "changes": [],
+  "changes": [
+    {
+      "path": "internal/agent/agent.go",
+      "kind": "modified",
+      "beforeDigest": "51d524c0c25b5e5d0d5c62f4951a601816139b5d7e967193912caf4a6f35597f",
+      "afterDigest": "d1babd2db3349556d63de95a87304d6b441a3478fd40ebba3198b707432261a6"
+    },
+    {
+      "path": "internal/agent/agent_test.go",
+      "kind": "modified",
+      "beforeDigest": "d214e36979f05d6589efc749b7cd6235681eeb5e13d60b7c56ab2424796a3911",
+      "afterDigest": "b8367e7c056d16f6d7fe2a87ff7e4fe0e911973f4d32dc991378310f20dd9743"
+    },
+    {
+      "path": "internal/intake/intake.go",
+      "kind": "modified",
+      "beforeDigest": "508692537fc6cde469d9a2411801cd12f982d37d3e5bbd01bad2bdcce7f63421",
+      "afterDigest": "f971ea44388bb9b6632a0a6648a2515926b0c31b06efb1c63d72b5121d2dab4d"
+    },
+    {
+      "path": "internal/intake/intake_test.go",
+      "kind": "modified",
+      "beforeDigest": "48d3db4478e274ab79c99c04107b9e7a5a4206b578401deb1ca008e8ca1db63b",
+      "afterDigest": "94f74e0c1bd3f470c2abdab1cec26baf420bfbe7c494e60657d688f7a5001894"
+    }
+  ],
   "reportedChecks": [
     {
-      "command": "go test ./...",
+      "command": "GOCACHE=/tmp/groundspec-go-cache go test ./...",
       "result": "Passed"
     },
     {
-      "command": "go vet ./...",
+      "command": "GOCACHE=/tmp/groundspec-go-cache go vet ./...",
       "result": "Passed"
     },
     {
-      "command": "go build ./cmd/groundspec",
+      "command": "GOCACHE=/tmp/groundspec-go-cache go build ./cmd/groundspec",
       "result": "Passed; emitted a non-fatal sandbox cache warning"
+    },
+    {
+      "command": "./groundspec --help",
+      "result": "Passed; generated binary removed afterward"
     },
     {
       "command": "bun run scripts/verify-contract-pin.js",
@@ -332,20 +361,12 @@
     },
     {
       "command": "npm test",
-      "result": "Passed: 20 passed, 1 skipped"
+      "result": "Passed: 20 tests, 1 platform-specific skip"
     },
     {
       "command": "git diff --check",
       "result": "Passed"
-    },
-    {
-      "command": "go run ./cmd/groundspec check --json",
-      "result": "Passed; graph healthy"
-    },
-    {
-      "command": "go run ./cmd/groundspec lifecycle --json",
-      "result": "Correctly blocked by the pre-existing `.github/workflows/ci.yml` modification and stale verification record"
     }
   ],
-  "recordedAt": "2026-08-31T21:11:56.693655Z"
+  "recordedAt": "2026-08-31T22:08:52.88455Z"
 }

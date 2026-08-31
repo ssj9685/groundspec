@@ -105,6 +105,17 @@ func probeLine(output []byte, prefix string) string {
 	return ""
 }
 
+func authenticatedLoginStatus(output []byte) string {
+	const prefix = "logged in using "
+	for _, line := range strings.Split(string(output), "\n") {
+		line = strings.TrimSpace(line)
+		if len(line) > len(prefix) && strings.EqualFold(line[:len(prefix)], prefix) && strings.TrimSpace(line[len(prefix):]) != "" {
+			return line
+		}
+	}
+	return ""
+}
+
 func discoverWith(ctx context.Context, runner commandRunner) []Descriptor {
 	descriptors := []Descriptor{}
 	executable, err := runner.LookPath("codex")
@@ -129,7 +140,7 @@ func discoverWith(ctx context.Context, runner commandRunner) []Descriptor {
 	loginContext, cancel := context.WithTimeout(ctx, probeTimeout)
 	login, loginErr := runner.Output(loginContext, executable, "login", "status")
 	cancel()
-	loginStatus := probeLine(login, "logged in")
+	loginStatus := authenticatedLoginStatus(login)
 	if loginErr == nil && loginStatus != "" {
 		descriptor.Auth = loginStatus
 		descriptor.Ready = true

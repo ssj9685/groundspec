@@ -1,8 +1,8 @@
 {
   "version": 1,
   "node": "CORE-REQUIREMENTS",
-  "digest": "ac1eb7bc3067f4f7dee37576304142c9444d34db847f647c0257ed32ecb2f181",
+  "digest": "344216fe2451efad2b664b0ec2f53eb34e4801a37d9fcc4668d8b611b742f204",
   "result": "passed",
-  "recordedAt": "2026-08-31T21:08:06.103605Z",
+  "recordedAt": "2026-08-31T22:09:36.49214Z",
   "note": "Accepted requirement ledger synchronized"
 }

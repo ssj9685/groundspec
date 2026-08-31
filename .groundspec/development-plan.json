@@ -15,7 +15,7 @@
   },
   "review": {
     "path": ".groundspec/review.json",
-    "digest": "55f7b87811798345468316f2a238bd99761e854d7367d817a165595a240b8bb1"
+    "digest": "a768e63ef733698c9ef8e97af91c55136da64d47d7c11e991d1e13fde495a323"
   },
   "projectContext": {
     "path": ".groundspec/project-context.json",

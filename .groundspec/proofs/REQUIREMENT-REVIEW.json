@@ -1,9 +1,9 @@
 {
   "version": 1,
   "node": "REQUIREMENT-REVIEW",
-  "digest": "3e04be6bbbee4f30d98689fb79e05dce6a8711048640647cc6d5ddef5937fd2d",
+  "digest": "bb9fb33b475a8b6e01b8d21a24c4c0be9f407fecc4c4aec23c687c69a4ed7b43",
   "result": "passed",
-  "recordedAt": "2026-08-31T21:08:06.091428Z",
+  "recordedAt": "2026-08-31T22:09:36.481586Z",
   "evidence": {
     "path": ".groundspec/evidence/workflow-status.json",
     "digest": "85e024743a2e38cb55c94f9c87000c7a325168cbfa0b38aa28a3df94a1c5f1af"

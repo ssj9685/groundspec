@@ -392,7 +392,7 @@ func (state *htmlAccumulator) flush() {
 }
 
 func extractHTML(source []byte) ([]Block, error) {
-	state := &htmlAccumulator{}
+	state := &htmlAccumulator{blocks: []Block{}}
 	line := 1
 	index := 0
 	skipTag := ""

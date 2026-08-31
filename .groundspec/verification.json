@@ -2,11 +2,11 @@
   "version": 1,
   "plan": {
     "path": ".groundspec/development-plan.json",
-    "digest": "ea0d7a8710ded5cf6f1e66de89ebc2b7fe2d8725ff861910d7a2630cda927f40"
+    "digest": "a67c2223726c893dcdf05b0e95fcff0e5639b84008c58dbe7a739d3b416a9b17"
   },
   "implementation": {
     "path": ".groundspec/implementation-result.json",
-    "digest": "a66605b1c37a35f017de15cdee58b73e9fc3c0f77e56d2bb66d196dea68e40d1"
+    "digest": "d3c6cad8d61ecd178e3349d848f8e1c84737786016a596011a7d875183d1eb6d"
   },
   "passed": true,
   "commands": [
@@ -23,7 +23,7 @@
       "optional": false,
       "log": {
         "path": "test-or-verification/commands/V-01.log",
-        "digest": "605e4664c94a54bdcbdb570e3043a4e5c51e1ba7e63b8fb825565579ea6f25e3"
+        "digest": "1d1bbae221b672d84d3f4785e613daf7ba283455eecea36ff84de00d768efce8"
       }
     },
     {
@@ -134,9 +134,9 @@
       "optional": false,
       "log": {
         "path": "test-or-verification/commands/V-08.log",
-        "digest": "83a7dc8452d48742880f1782479bb39489470b076a1649365dd3cc0f958950eb"
+        "digest": "f51b08346e01f86c472782ccd45d220fbdb49f30de14ffd5847987a625b78ee5"
       }
     }
   ],
-  "recordedAt": "2026-08-31T21:12:07.576991Z"
+  "recordedAt": "2026-08-31T22:09:03.229372Z"
 }
