@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "nodes": [
+    {
+      "id": "PRODUCT-BRIEF",
+      "kind": "source",
+      "inputs": ["PRODUCT_BRIEF.md"],
+      "proof": ".groundspec/proofs/PRODUCT-BRIEF.json"
+    },
+    {
+      "id": "REQUIREMENT-PROPOSAL",
+      "kind": "requirement-proposal",
+      "inputs": [".groundspec/proposal.json", ".groundspec/sources/product-brief.json"],
+      "dependsOn": ["PRODUCT-BRIEF"],
+      "proof": ".groundspec/proofs/REQUIREMENT-PROPOSAL.json"
+    },
+    {
+      "id": "REQUIREMENT-REVIEW",
+      "kind": "requirement-review",
+      "inputs": [".groundspec/review.json"],
+      "dependsOn": ["REQUIREMENT-PROPOSAL"],
+      "proof": ".groundspec/proofs/REQUIREMENT-REVIEW.json"
+    },
+    {
+      "id": "CORE-REQUIREMENTS",
+      "kind": "requirements",
+      "inputs": [".groundspec/requirements.json"],
+      "dependsOn": ["REQUIREMENT-REVIEW"],
+      "proof": ".groundspec/proofs/CORE-REQUIREMENTS.json"
+    },
+    {
+      "id": "CORE-SPEC",
+      "kind": "behavior",
+      "inputs": ["SPEC.md"],
+      "dependsOn": ["CORE-REQUIREMENTS"]
+    },
+    {
+      "id": "CORE-DESIGN",
+      "kind": "design",
+      "inputs": ["DESIGN.md", "schemas"],
+      "dependsOn": ["CORE-SPEC"]
+    },
+    {
+      "id": "CORE-TEST-SPEC",
+      "kind": "verification-contract",
+      "inputs": ["TEST_SPEC.md", "test-or-verification/TEST_SPEC.md"],
+      "dependsOn": ["CORE-SPEC", "CORE-DESIGN"]
+    },
+    {
+      "id": "JS-VERIFY",
+      "kind": "verification",
+      "inputs": ["TEST_SPEC.md", "package.json", "bin", "src", "test", "testdata"],
+      "dependsOn": ["CORE-TEST-SPEC"],
+      "proof": ".groundspec/proofs/JS-VERIFY.json"
+    },
+    {
+      "id": "GO-VERIFY",
+      "kind": "verification",
+      "inputs": ["TEST_SPEC.md", "go.mod", "cmd", "internal", "testdata"],
+      "dependsOn": ["CORE-TEST-SPEC"],
+      "proof": ".groundspec/proofs/GO-VERIFY.json"
+    },
+    {
+      "id": "RELEASE-VERIFY",
+      "kind": "release",
+      "inputs": ["LICENSE", "go.mod", "cmd", "release", ".github/workflows/release.yml"],
+      "dependsOn": ["GO-VERIFY"],
+      "proof": ".groundspec/proofs/RELEASE-VERIFY.json"
+    },
+    {
+      "id": "LIFECYCLE-VERIFY",
+      "kind": "terminal-lifecycle",
+      "inputs": [
+        ".groundspec/development-plan.json",
+        ".groundspec/implementation-result.json",
+        ".groundspec/verification.json",
+        ".groundspec/project-context.json",
+        "test-or-verification/commands"
+      ],
+      "dependsOn": ["REQUIREMENT-REVIEW", "GO-VERIFY", "MERMAID-CONTRACT", "PUBLICATION-VERIFY"],
+      "proof": ".groundspec/proofs/LIFECYCLE-VERIFY.json"
+    },
+    {
+      "id": "MERMAID-CONTRACT",
+      "kind": "executable-contract",
+      "inputs": ["package.json", "bun.lock", "scripts/verify-contract-pin.js", "scripts/contracts-verify.js", "scripts/contracts-context.js", "scripts/contracts-impact.smoke.js", "contracts", "mermaid-spec.links.json", "integrations/mermaid-spec"],
+      "dependsOn": ["CORE-SPEC", "CORE-DESIGN", "CORE-TEST-SPEC"],
+      "proof": ".groundspec/proofs/MERMAID-CONTRACT.json"
+    },
+    {
+      "id": "PUBLICATION-VERIFY",
+      "kind": "security-verification",
+      "inputs": ["publication-policy.json", ".gitignore", "package.json", "scripts/publication-audit.js", "src/publication.js", "test/publication.test.js", "internal/agent", "internal/pipeline", "schemas/development-plan.schema.json", "schemas/implementation-result.schema.json"],
+      "dependsOn": ["CORE-SPEC", "CORE-DESIGN", "CORE-TEST-SPEC"],
+      "proof": ".groundspec/proofs/PUBLICATION-VERIFY.json"
+    },
+    {
+      "id": "PROPOSAL-ADAPTER-GUIDE",
+      "kind": "integration-guide",
+      "inputs": ["integrations/proposal-adapter"],
+      "dependsOn": ["CORE-SPEC", "CORE-DESIGN", "CORE-TEST-SPEC"]
+    },
+    {
+      "id": "CORE-README",
+      "kind": "documentation",
+      "inputs": ["README.md", "LICENSE", ".gitignore", "docs"],
+      "dependsOn": ["PRODUCT-BRIEF", "REQUIREMENT-PROPOSAL", "REQUIREMENT-REVIEW", "CORE-REQUIREMENTS", "CORE-SPEC", "CORE-DESIGN", "CORE-TEST-SPEC", "JS-VERIFY", "GO-VERIFY", "RELEASE-VERIFY", "MERMAID-CONTRACT", "PUBLICATION-VERIFY", "LIFECYCLE-VERIFY", "PROPOSAL-ADAPTER-GUIDE"]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "node": "JS-VERIFY",
+  "digest": "5a1bb11f320a8600f74c474cae7ecd74f9c4150d678f6b017b04ffedb9d424fd",
+  "result": "passed",
+  "recordedAt": "2026-08-31T21:08:06.114389Z",
+  "evidence": {
+    "path": ".groundspec/evidence/js-tests.tap",
+    "digest": "bbb6057855beb24347f8d40391b077d71d42c5ff7ebb7702e3323ecdeaa3a5bc"
+  },
+  "note": "JavaScript conformance reference passed"
+}

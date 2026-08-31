@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "proposal": ".groundspec/proposal.json",
+  "digest": "d803ee1a7c4cddee928ac7aa594ddb77b82ac4f42da51fdcdd5647266c5517d1",
+  "reviewDigest": "ada19e6078d2f2890c38ec533434e6eaf694c4b7080e122d362cd0b3e7db1d32",
+  "sourceBundle": ".groundspec/sources/product-brief.json",
+  "producer": {
+    "name": "codex-cli",
+    "version": "codex-cli 0.147.0"
+  },
+  "requirements": 37,
+  "questions": 0
+}

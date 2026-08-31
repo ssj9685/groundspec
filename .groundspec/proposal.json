@@ -1,0 +1,310 @@
+{
+  "version": 1,
+  "sourceBundle": {
+    "path": ".groundspec/sources/product-brief.json",
+    "digest": "8d2e0bec4d7b9d4b7f610dcf97c2b63cabad8825e87b7b899470dbb74490cf15"
+  },
+  "producer": {
+    "name": "codex-cli",
+    "version": "codex-cli 0.147.0"
+  },
+  "requirements": [
+    {
+      "id": "PB-01",
+      "statement": "The first intake slice accepts local HTML, Markdown, and plain-text files.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-f8d9222b4e83"
+      ]
+    },
+    {
+      "id": "PB-02",
+      "statement": "Intake emits a deterministic, versioned `SourceBundle` containing source identity, format, raw SHA-256 digest, and ordered text blocks.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-41e09589636c"
+      ]
+    },
+    {
+      "id": "PB-03",
+      "statement": "Every block has a stable ID, source line, block kind, section path, and normalized text.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-246a160a2ccb"
+      ]
+    },
+    {
+      "id": "PB-04",
+      "statement": "Intake performs no network request and makes no claim that extracted text is a correct requirement or specification.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-7925079437f4"
+      ]
+    },
+    {
+      "id": "PB-05",
+      "statement": "AI or human synthesis remains outside the deterministic core and communicates through versioned files.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-c02ba7b71d5c"
+      ]
+    },
+    {
+      "id": "PB-06",
+      "statement": "The repository uses its own graph and proof mechanism on its source, specification, design, tests, implementation, and evidence.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-b7d998611a26"
+      ]
+    },
+    {
+      "id": "PB-07",
+      "statement": "The first external acceptance source may not introduce source-specific extraction rules into the product.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-fc8e9ba11a86"
+      ]
+    },
+    {
+      "id": "PB-08",
+      "statement": "A requirement proposal is a provider-neutral artifact that binds every candidate and question to current `SourceBundle` blocks.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-98a10c53a0fb"
+      ]
+    },
+    {
+      "id": "PB-09",
+      "statement": "The core validates proposal provenance and structure without deciding whether a proposed statement is semantically correct.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-19ceae103322"
+      ]
+    },
+    {
+      "id": "PB-10",
+      "statement": "Human review is recorded separately from the proposal, binds to the exact reviewable candidate content, and can accept or reject requirements and resolve questions.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-4c5d8b7f8005"
+      ]
+    },
+    {
+      "id": "PB-11",
+      "statement": "The core reports whether review is blocked or ready for specification materialization and identifies every outstanding decision.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-556dca5391e6"
+      ]
+    },
+    {
+      "id": "PB-12",
+      "statement": "External AI and document-generation adapters communicate through versioned files; the core does not load a provider SDK or execute adapter commands.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-6b99e3783c17"
+      ]
+    },
+    {
+      "id": "PB-13",
+      "statement": "The repository uses the proposal, review, and status protocols to develop this workflow slice itself.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-985e4aacfa6e"
+      ]
+    },
+    {
+      "id": "PB-14",
+      "statement": "The product discovers installed agent CLIs through safe capability and login-status probes and never reads or copies their OAuth tokens.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-de96e28e8a09"
+      ]
+    },
+    {
+      "id": "PB-15",
+      "statement": "An explicit project adapter selection wins; automatic selection is allowed only when exactly one authenticated compatible adapter is available.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-3f58b69a111f"
+      ]
+    },
+    {
+      "id": "PB-16",
+      "statement": "Starting from one supported source creates a self-contained workspace, deterministic `SourceBundle`, AI requirement proposal, and review gate.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-f10074fd7298"
+      ]
+    },
+    {
+      "id": "PB-17",
+      "statement": "After review, the selected adapter produces a structured development plan from which the core deterministically materializes `SPEC.md`, `TEST_SPEC.md`, `DESIGN.md`, and an implementation plan.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-c2cea79084c0"
+      ]
+    },
+    {
+      "id": "PB-18",
+      "statement": "An explicit implementation action delegates workspace changes to the authenticated agent and records the adapter, reviewed plan, changed artifacts, and reported checks.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-d44b03698800"
+      ]
+    },
+    {
+      "id": "PB-19",
+      "statement": "An explicit verification action runs only reviewed argv-style commands without a shell, captures their outputs and exit codes, and records fresh graph evidence.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-1d15ce10c924"
+      ]
+    },
+    {
+      "id": "PB-20",
+      "statement": "The first complete product accepts local HTML, Markdown, text, and text-bearing PDF sources; OCR remains an external reader capability.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-2b9d7a19e1e9"
+      ]
+    },
+    {
+      "id": "PB-21",
+      "statement": "A project cannot report terminal completion until source, proposal, review, materialization, implementation, verification, and evidence nodes all exist and are current.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-9280b825672c"
+      ]
+    },
+    {
+      "id": "PB-22",
+      "statement": "The repository develops every new slice through its own latest usable workflow and promotes dogfood failures into product contracts and regression tests.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-f2fd1d101362"
+      ]
+    },
+    {
+      "id": "PB-23",
+      "statement": "Review decisions bind to individual candidate digests so unchanged decisions survive proposal growth while new or changed candidates become explicit blockers.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-839df82a8c15"
+      ]
+    },
+    {
+      "id": "PB-24",
+      "statement": "Development planning binds to reviewed project context such as an existing language, framework, source boundary, and constraints, and the core rejects silent architecture replacement.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-5b3ed7abd3df"
+      ]
+    },
+    {
+      "id": "PB-25",
+      "statement": "An optional executable-contract adapter may pin an exact external compiler revision without making that compiler or its runtime a dependency of the Go core or released binary.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-053cf71898b4"
+      ]
+    },
+    {
+      "id": "PB-26",
+      "statement": "Mermaid contracts use stable contract identities and explicit implementation, test, consumer, and documentation links; missing, duplicate, unknown, or repository-escaping links fail verification instead of being inferred.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-944ffe888bc4"
+      ]
+    },
+    {
+      "id": "PB-27",
+      "statement": "A contract change can produce bounded context and propagated impact artifacts for a context-free agent, including affected contracts, linked implementation files, and linked tests.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-39471c280eca"
+      ]
+    },
+    {
+      "id": "PB-28",
+      "statement": "Targeted impact tests are advisory; terminal completion still requires regenerated artifacts, compiler drift verification, the reviewed full verification suite, and fresh graph evidence.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-45a35b79026b"
+      ]
+    },
+    {
+      "id": "PB-29",
+      "statement": "Publication is a separate explicit boundary that exposes only allowlisted repository artifacts, stores portable adapter provenance, excludes transient context, and rejects local user paths, credential-shaped material, symlinks, binary content, and oversized files before upload.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-7d94dc1cb321"
+      ]
+    },
+    {
+      "id": "PB-30",
+      "statement": "GroundSpec is publicly reusable under the MIT license through a stable Go install path, versioned self-contained binaries, checksums, and a CI-verified source build.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-e2ee77a93516"
+      ]
+    },
+    {
+      "id": "PB-31",
+      "statement": "A user can initialize GroundSpec in an existing non-empty project without overwriting existing files, while reserved workflow-path conflicts fail closed.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-bee977fbbcc3"
+      ]
+    },
+    {
+      "id": "PB-32",
+      "statement": "The workflow helps a human and an AI move from source evidence to specifications, design, tests, implementation, and fresh verification evidence without hiding assumptions or unresolved decisions.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-ee740cabcd9e"
+      ]
+    },
+    {
+      "id": "PB-33",
+      "statement": "The deterministic core must not silently convert an inferred requirement into fact.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-23ed39dd64f4"
+      ]
+    },
+    {
+      "id": "PB-34",
+      "statement": "The v0 product does not ingest images or audio and does not provide built-in OCR ingestion.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-5d781eb69969"
+      ]
+    },
+    {
+      "id": "PB-35",
+      "statement": "The v0 product does not guarantee that a hiring assignment or product review will pass.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-37a50b5e3019"
+      ]
+    },
+    {
+      "id": "PB-36",
+      "statement": "A contract-to-file link alone must not be treated as proof that an AI change is semantically correct.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-3f96170b581e"
+      ]
+    },
+    {
+      "id": "PB-37",
+      "statement": "The v0 product does not automatically upload, commit, or push artifacts.",
+      "classification": "explicit",
+      "sourceBlocks": [
+        "B-068bb643e5c3"
+      ]
+    }
+  ],
+  "questions": []
+}

@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "links": [
+    {
+      "contract": "machine:DogfoodFailurePromotion",
+      "role": "implementation",
+      "path": "internal/core/core.go"
+    },
+    {
+      "contract": "machine:DogfoodFailurePromotion",
+      "role": "test",
+      "path": "internal/core/core_test.go"
+    },
+    {
+      "contract": "machine:DogfoodFailurePromotion",
+      "role": "consumer",
+      "path": "internal/core/cli.go"
+    },
+    {
+      "contract": "machine:DogfoodFailurePromotion",
+      "role": "documentation",
+      "path": "README.md"
+    },
+    {
+      "contract": "machine:GroundSpecLifecycle",
+      "role": "implementation",
+      "path": "internal/pipeline/pipeline.go"
+    },
+    {
+      "contract": "machine:GroundSpecLifecycle",
+      "role": "test",
+      "path": "internal/pipeline/pipeline_test.go"
+    },
+    {
+      "contract": "machine:GroundSpecLifecycle",
+      "role": "consumer",
+      "path": "internal/core/cli.go"
+    },
+    {
+      "contract": "machine:GroundSpecLifecycle",
+      "role": "documentation",
+      "path": "README.md"
+    }
+  ],
+  "requirements": [
+    {
+      "kind": "machine",
+      "roles": [
+        "implementation",
+        "test",
+        "consumer",
+        "documentation"
+      ]
+    }
+  ]
+}

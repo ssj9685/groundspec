@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "implementation-result.schema.json",
+  "title": "GroundSpec Implementation Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "plan", "adapter", "summary", "artifacts", "changes", "reportedChecks", "recordedAt"],
+  "properties": {
+    "version": { "type": "integer", "const": 1 },
+    "plan": { "$ref": "#/$defs/reference" },
+    "adapter": { "$ref": "#/$defs/adapter" },
+    "summary": { "type": "string", "minLength": 1 },
+    "artifacts": { "type": "array", "items": { "$ref": "#/$defs/artifact" } },
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["path", "kind"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 }, "kind": { "enum": ["created", "modified", "removed"] },
+          "beforeDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }, "afterDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    },
+    "reportedChecks": {
+      "type": "array",
+      "items": { "type": "object", "additionalProperties": false, "required": ["command", "result"], "properties": { "command": { "type": "string" }, "result": { "type": "string" } } }
+    },
+    "recordedAt": { "type": "string", "format": "date-time" }
+  },
+  "$defs": {
+    "reference": { "type": "object", "additionalProperties": false, "required": ["path", "digest"], "properties": { "path": { "type": "string" }, "digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" } } },
+    "artifact": { "type": "object", "additionalProperties": false, "required": ["path", "digest"], "properties": { "path": { "type": "string" }, "digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" } } },
+    "adapter": {
+      "type": "object", "additionalProperties": false, "required": ["id", "name", "kind", "auth", "ready"],
+      "properties": { "id": { "type": "string" }, "name": { "type": "string" }, "kind": { "type": "string" }, "executable": { "type": "string", "pattern": "^[^/\\\\]+$" }, "version": { "type": "string" }, "auth": { "const": "authenticated" }, "ready": { "const": true }, "reason": { "type": "string", "maxLength": 0 } }
+    }
+  }
+}

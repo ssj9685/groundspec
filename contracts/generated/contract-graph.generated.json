@@ -1,0 +1,605 @@
+{
+  "version": 1,
+  "nodes": [
+    {
+      "id": "effect:DogfoodFailurePromotion:recordClosure",
+      "kind": "effect",
+      "name": "recordClosure",
+      "fingerprint": "fd3f09b1b258b04fa7d747d189ea2489f184a5b6815974163b744c746959a97e",
+      "details": {
+        "name": "recordClosure"
+      },
+      "source": {
+        "file": "dogfood-failure-lifecycle.md"
+      }
+    },
+    {
+      "id": "effect:DogfoodFailurePromotion:recordContract",
+      "kind": "effect",
+      "name": "recordContract",
+      "fingerprint": "22f1766900b447fc2049ec75d77df9ae3251b0097a7cb9ff3e55f3d5bd23c3bf",
+      "details": {
+        "name": "recordContract"
+      },
+      "source": {
+        "file": "dogfood-failure-lifecycle.md"
+      }
+    },
+    {
+      "id": "effect:DogfoodFailurePromotion:recordRegression",
+      "kind": "effect",
+      "name": "recordRegression",
+      "fingerprint": "2f8444a970e7c4ed87de74c88f454f134a6b6c56d484d9b336a1c5473b8b60d2",
+      "details": {
+        "name": "recordRegression"
+      },
+      "source": {
+        "file": "dogfood-failure-lifecycle.md"
+      }
+    },
+    {
+      "id": "effect:GroundSpecLifecycle:recordCompletion",
+      "kind": "effect",
+      "name": "recordCompletion",
+      "fingerprint": "05b98b48c62f0a14a0d60817515b0e4655e6a0f94ccfadaef07a5ca84d605cf0",
+      "details": {
+        "name": "recordCompletion"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "effect:GroundSpecLifecycle:recordFullVerification",
+      "kind": "effect",
+      "name": "recordFullVerification",
+      "fingerprint": "27b7d5d314488b129f05b84e6509bd4097502b58617381b71b86c668903d14d0",
+      "details": {
+        "name": "recordFullVerification"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "effect:GroundSpecLifecycle:recordGraphEvidence",
+      "kind": "effect",
+      "name": "recordGraphEvidence",
+      "fingerprint": "9c34055daa967fabb0181a86886040a02043059121084a815519f041a14f1d24",
+      "details": {
+        "name": "recordGraphEvidence"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "effect:GroundSpecLifecycle:recordImplementation",
+      "kind": "effect",
+      "name": "recordImplementation",
+      "fingerprint": "31b0eab954f04d114552fb9980bc09d87910d5ed6bdd15daa5c13c737908ead7",
+      "details": {
+        "name": "recordImplementation"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "effect:GroundSpecLifecycle:recordPlan",
+      "kind": "effect",
+      "name": "recordPlan",
+      "fingerprint": "0877430502324c5227092cea02b323e070f57fb5c6524cf499cbdfe59d7bcee8",
+      "details": {
+        "name": "recordPlan"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "effect:GroundSpecLifecycle:recordProposal",
+      "kind": "effect",
+      "name": "recordProposal",
+      "fingerprint": "ab232010fc78440812fec0a695d9e05bfdac0fbd52c14f4749c820b89da37dcc",
+      "details": {
+        "name": "recordProposal"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "effect:GroundSpecLifecycle:recordReview",
+      "kind": "effect",
+      "name": "recordReview",
+      "fingerprint": "06e6115ccf6c377e67edefb6cbb0118daffec440e2a0cb19ca679876d3ed0cfe",
+      "details": {
+        "name": "recordReview"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "effect:GroundSpecLifecycle:recordTargetedEvidence",
+      "kind": "effect",
+      "name": "recordTargetedEvidence",
+      "fingerprint": "32ce6f3c10d2372f7ea6a9a7a0730f988dab1a1d5eb98fdd6c24153c888f35a6",
+      "details": {
+        "name": "recordTargetedEvidence"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "guard:DogfoodFailurePromotion:regressionPasses",
+      "kind": "guard",
+      "name": "regressionPasses",
+      "fingerprint": "9b0707a2e9798a12ba5264d9ad38c7f3c9adaedc6bd3d59e7a654791f3209217",
+      "details": {
+        "name": "regressionPasses"
+      },
+      "source": {
+        "file": "dogfood-failure-lifecycle.md"
+      }
+    },
+    {
+      "id": "guard:GroundSpecLifecycle:allCandidatesDecided",
+      "kind": "guard",
+      "name": "allCandidatesDecided",
+      "fingerprint": "50c6a5d1c8d0ad4b9b9f9203d194ae3706ca0a18aad32bef7f6570cb74dc4809",
+      "details": {
+        "name": "allCandidatesDecided"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "guard:GroundSpecLifecycle:explicitAction",
+      "kind": "guard",
+      "name": "explicitAction",
+      "fingerprint": "501197923234ffd4851c2d92d48d3b9a7947c6cc7bf3e4ac74a53cb5d95dabce",
+      "details": {
+        "name": "explicitAction"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "guard:GroundSpecLifecycle:fullSuitePassed",
+      "kind": "guard",
+      "name": "fullSuitePassed",
+      "fingerprint": "19aec53638408d627f20d8abdc74b90c2e18a13f078e9b97735e82181bd98573",
+      "details": {
+        "name": "fullSuitePassed"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "guard:GroundSpecLifecycle:graphCurrent",
+      "kind": "guard",
+      "name": "graphCurrent",
+      "fingerprint": "edccc6db8e591fef5f0e2ab12e94156f45d51452d4d4751a50cb87b75eb45557",
+      "details": {
+        "name": "graphCurrent"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "guard:GroundSpecLifecycle:projectContextCurrent",
+      "kind": "guard",
+      "name": "projectContextCurrent",
+      "fingerprint": "c4c092b84182253ffc9c76602cef1e478203ddc020e61038706a2d84b530681d",
+      "details": {
+        "name": "projectContextCurrent"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "guard:GroundSpecLifecycle:reviewedArgvOnly",
+      "kind": "guard",
+      "name": "reviewedArgvOnly",
+      "fingerprint": "ba8809db9c617a1f53e8ca0bdf0161e6be84b8e8c6d30c0fb2dd0914b52cf58c",
+      "details": {
+        "name": "reviewedArgvOnly"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "guard:GroundSpecLifecycle:sourceCurrent",
+      "kind": "guard",
+      "name": "sourceCurrent",
+      "fingerprint": "747f026b5d57110f8cfbf306c5891a7751723cca9257b6aeb94b4e49b4ba15fd",
+      "details": {
+        "name": "sourceCurrent"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "machine:DogfoodFailurePromotion",
+      "kind": "machine",
+      "name": "DogfoodFailurePromotion",
+      "fingerprint": "e68e7977d1f0a5ceb1412d83846e5ceff4f6712151392118321bd52ef8856e4b",
+      "details": {
+        "initial": "Observed",
+        "states": [
+          "Closed",
+          "ContractRecorded",
+          "Observed",
+          "RegressionPassing"
+        ],
+        "terminal": [
+          "Closed"
+        ]
+      },
+      "source": {
+        "file": "dogfood-failure-lifecycle.md"
+      }
+    },
+    {
+      "id": "machine:GroundSpecLifecycle",
+      "kind": "machine",
+      "name": "GroundSpecLifecycle",
+      "fingerprint": "36ab3093296ee8b6983d4ba091e5c926db6c58b3b09384a3aeafa3049c4ebee7",
+      "details": {
+        "initial": "SourceReady",
+        "states": [
+          "Complete",
+          "EvidenceCurrent",
+          "FullyVerified",
+          "Implemented",
+          "PlanReady",
+          "ProposalReady",
+          "ReviewReady",
+          "SourceReady",
+          "TargetedVerified"
+        ],
+        "terminal": [
+          "Complete"
+        ]
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "transition:DogfoodFailurePromotion:ContractRecorded:test",
+      "kind": "transition",
+      "name": "ContractRecorded --test--> RegressionPassing",
+      "fingerprint": "d1af89badd5f1b33e5cd2f01c2093f71c3fb754381378b4ed96fd5f196eeb1cc",
+      "details": {
+        "from": "ContractRecorded",
+        "event": "test",
+        "to": "RegressionPassing",
+        "guard": "regressionPasses",
+        "effect": "recordRegression"
+      },
+      "source": {
+        "file": "dogfood-failure-lifecycle.md"
+      }
+    },
+    {
+      "id": "transition:DogfoodFailurePromotion:Observed:contract",
+      "kind": "transition",
+      "name": "Observed --contract--> ContractRecorded",
+      "fingerprint": "42b6afc4dc40db31e180cb518438ab5cb6c42e920204fa680a1d57808b126675",
+      "details": {
+        "from": "Observed",
+        "event": "contract",
+        "to": "ContractRecorded",
+        "effect": "recordContract"
+      },
+      "source": {
+        "file": "dogfood-failure-lifecycle.md"
+      }
+    },
+    {
+      "id": "transition:DogfoodFailurePromotion:RegressionPassing:close",
+      "kind": "transition",
+      "name": "RegressionPassing --close--> Closed",
+      "fingerprint": "1ca95895be4d1b3b622955f1eccc57edc1cc023bc989846f861590121aa4c088",
+      "details": {
+        "from": "RegressionPassing",
+        "event": "close",
+        "to": "Closed",
+        "effect": "recordClosure"
+      },
+      "source": {
+        "file": "dogfood-failure-lifecycle.md"
+      }
+    },
+    {
+      "id": "transition:GroundSpecLifecycle:EvidenceCurrent:complete",
+      "kind": "transition",
+      "name": "EvidenceCurrent --complete--> Complete",
+      "fingerprint": "390ae0cc97bcab4703fc8043c8b2655257e05ca95368e013b06876f535f3a885",
+      "details": {
+        "from": "EvidenceCurrent",
+        "event": "complete",
+        "to": "Complete",
+        "guard": "graphCurrent",
+        "effect": "recordCompletion"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "transition:GroundSpecLifecycle:FullyVerified:attest",
+      "kind": "transition",
+      "name": "FullyVerified --attest--> EvidenceCurrent",
+      "fingerprint": "3574b77616d473cb9d5dce199a1b2d2b35cfb80170b3a602d0e0d7f8455a5946",
+      "details": {
+        "from": "FullyVerified",
+        "event": "attest",
+        "to": "EvidenceCurrent",
+        "guard": "fullSuitePassed",
+        "effect": "recordGraphEvidence"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "transition:GroundSpecLifecycle:Implemented:impactCheck",
+      "kind": "transition",
+      "name": "Implemented --impactCheck--> TargetedVerified",
+      "fingerprint": "fb532ee0bf9226f17e0b38baf73525b8350c7beb38388fd04b9be16672401caf",
+      "details": {
+        "from": "Implemented",
+        "event": "impactCheck",
+        "to": "TargetedVerified",
+        "effect": "recordTargetedEvidence"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "transition:GroundSpecLifecycle:PlanReady:implement",
+      "kind": "transition",
+      "name": "PlanReady --implement--> Implemented",
+      "fingerprint": "56bca17f771b7b6d3065458cbc673f4f0bed63334a099d14419f5630dd8fdd47",
+      "details": {
+        "from": "PlanReady",
+        "event": "implement",
+        "to": "Implemented",
+        "guard": "explicitAction",
+        "effect": "recordImplementation"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "transition:GroundSpecLifecycle:ProposalReady:review",
+      "kind": "transition",
+      "name": "ProposalReady --review--> ReviewReady",
+      "fingerprint": "fc52e312651f25381d7125c32f121e2abab343e914864698c193cd9069115e02",
+      "details": {
+        "from": "ProposalReady",
+        "event": "review",
+        "to": "ReviewReady",
+        "guard": "allCandidatesDecided",
+        "effect": "recordReview"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "transition:GroundSpecLifecycle:ReviewReady:materialize",
+      "kind": "transition",
+      "name": "ReviewReady --materialize--> PlanReady",
+      "fingerprint": "b5e54e2f42f246ebcb46cff53fd1d58cc9cfc18fc920778076b54bfa0d74d234",
+      "details": {
+        "from": "ReviewReady",
+        "event": "materialize",
+        "to": "PlanReady",
+        "guard": "projectContextCurrent",
+        "effect": "recordPlan"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "transition:GroundSpecLifecycle:SourceReady:propose",
+      "kind": "transition",
+      "name": "SourceReady --propose--> ProposalReady",
+      "fingerprint": "34f5b62d46e0b1fcb034f15c57f6e112dfa7cdbfdb46a1754d6631787141fc18",
+      "details": {
+        "from": "SourceReady",
+        "event": "propose",
+        "to": "ProposalReady",
+        "guard": "sourceCurrent",
+        "effect": "recordProposal"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    },
+    {
+      "id": "transition:GroundSpecLifecycle:TargetedVerified:verify",
+      "kind": "transition",
+      "name": "TargetedVerified --verify--> FullyVerified",
+      "fingerprint": "ca1577672c96d85db52a7b939fa38e6957c6e2094481ff3f78ae10b3ffbe1661",
+      "details": {
+        "from": "TargetedVerified",
+        "event": "verify",
+        "to": "FullyVerified",
+        "guard": "reviewedArgvOnly",
+        "effect": "recordFullVerification"
+      },
+      "source": {
+        "file": "workflow-lifecycle.md"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "machine:DogfoodFailurePromotion",
+      "to": "transition:DogfoodFailurePromotion:ContractRecorded:test",
+      "relation": "transition"
+    },
+    {
+      "from": "machine:DogfoodFailurePromotion",
+      "to": "transition:DogfoodFailurePromotion:Observed:contract",
+      "relation": "transition"
+    },
+    {
+      "from": "machine:DogfoodFailurePromotion",
+      "to": "transition:DogfoodFailurePromotion:RegressionPassing:close",
+      "relation": "transition"
+    },
+    {
+      "from": "machine:GroundSpecLifecycle",
+      "to": "transition:GroundSpecLifecycle:EvidenceCurrent:complete",
+      "relation": "transition"
+    },
+    {
+      "from": "machine:GroundSpecLifecycle",
+      "to": "transition:GroundSpecLifecycle:FullyVerified:attest",
+      "relation": "transition"
+    },
+    {
+      "from": "machine:GroundSpecLifecycle",
+      "to": "transition:GroundSpecLifecycle:Implemented:impactCheck",
+      "relation": "transition"
+    },
+    {
+      "from": "machine:GroundSpecLifecycle",
+      "to": "transition:GroundSpecLifecycle:PlanReady:implement",
+      "relation": "transition"
+    },
+    {
+      "from": "machine:GroundSpecLifecycle",
+      "to": "transition:GroundSpecLifecycle:ProposalReady:review",
+      "relation": "transition"
+    },
+    {
+      "from": "machine:GroundSpecLifecycle",
+      "to": "transition:GroundSpecLifecycle:ReviewReady:materialize",
+      "relation": "transition"
+    },
+    {
+      "from": "machine:GroundSpecLifecycle",
+      "to": "transition:GroundSpecLifecycle:SourceReady:propose",
+      "relation": "transition"
+    },
+    {
+      "from": "machine:GroundSpecLifecycle",
+      "to": "transition:GroundSpecLifecycle:TargetedVerified:verify",
+      "relation": "transition"
+    },
+    {
+      "from": "transition:DogfoodFailurePromotion:ContractRecorded:test",
+      "to": "effect:DogfoodFailurePromotion:recordRegression",
+      "relation": "effect"
+    },
+    {
+      "from": "transition:DogfoodFailurePromotion:ContractRecorded:test",
+      "to": "guard:DogfoodFailurePromotion:regressionPasses",
+      "relation": "guard"
+    },
+    {
+      "from": "transition:DogfoodFailurePromotion:Observed:contract",
+      "to": "effect:DogfoodFailurePromotion:recordContract",
+      "relation": "effect"
+    },
+    {
+      "from": "transition:DogfoodFailurePromotion:RegressionPassing:close",
+      "to": "effect:DogfoodFailurePromotion:recordClosure",
+      "relation": "effect"
+    },
+    {
+      "from": "transition:GroundSpecLifecycle:EvidenceCurrent:complete",
+      "to": "effect:GroundSpecLifecycle:recordCompletion",
+      "relation": "effect"
+    },
+    {
+      "from": "transition:GroundSpecLifecycle:EvidenceCurrent:complete",
+      "to": "guard:GroundSpecLifecycle:graphCurrent",
+      "relation": "guard"
+    },
+    {
+      "from": "transition:GroundSpecLifecycle:FullyVerified:attest",
+      "to": "effect:GroundSpecLifecycle:recordGraphEvidence",
+      "relation": "effect"
+    },
+    {
+      "from": "transition:GroundSpecLifecycle:FullyVerified:attest",
+      "to": "guard:GroundSpecLifecycle:fullSuitePassed",
+      "relation": "guard"
+    },
+    {
+      "from": "transition:GroundSpecLifecycle:Implemented:impactCheck",
+      "to": "effect:GroundSpecLifecycle:recordTargetedEvidence",
+      "relation": "effect"
+    },
+    {
+      "from": "transition:GroundSpecLifecycle:PlanReady:implement",
+      "to": "effect:GroundSpecLifecycle:recordImplementation",
+      "relation": "effect"
+    },
+    {
+      "from": "transition:GroundSpecLifecycle:PlanReady:implement",
+      "to": "guard:GroundSpecLifecycle:explicitAction",
+      "relation": "guard"
+    },
+    {
+      "from": "transition:GroundSpecLifecycle:ProposalReady:review",
+      "to": "effect:GroundSpecLifecycle:recordReview",
+      "relation": "effect"
+    },
+    {
+      "from": "transition:GroundSpecLifecycle:ProposalReady:review",
+      "to": "guard:GroundSpecLifecycle:allCandidatesDecided",
+      "relation": "guard"
+    },
+    {
+      "from": "transition:GroundSpecLifecycle:ReviewReady:materialize",
+      "to": "effect:GroundSpecLifecycle:recordPlan",
+      "relation": "effect"
+    },
+    {
+      "from": "transition:GroundSpecLifecycle:ReviewReady:materialize",
+      "to": "guard:GroundSpecLifecycle:projectContextCurrent",
+      "relation": "guard"
+    },
+    {
+      "from": "transition:GroundSpecLifecycle:SourceReady:propose",
+      "to": "effect:GroundSpecLifecycle:recordProposal",
+      "relation": "effect"
+    },
+    {
+      "from": "transition:GroundSpecLifecycle:SourceReady:propose",
+      "to": "guard:GroundSpecLifecycle:sourceCurrent",
+      "relation": "guard"
+    },
+    {
+      "from": "transition:GroundSpecLifecycle:TargetedVerified:verify",
+      "to": "effect:GroundSpecLifecycle:recordFullVerification",
+      "relation": "effect"
+    },
+    {
+      "from": "transition:GroundSpecLifecycle:TargetedVerified:verify",
+      "to": "guard:GroundSpecLifecycle:reviewedArgvOnly",
+      "relation": "guard"
+    }
+  ]
+}

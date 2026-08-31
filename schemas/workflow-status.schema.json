@@ -1,0 +1,40 @@
+{
+  "title": "GroundSpec Workflow Status",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "proposal", "review", "state", "next", "summary", "blockers"],
+  "properties": {
+    "version": { "const": 1 },
+    "proposal": { "type": "string", "minLength": 1 },
+    "review": { "type": "string", "minLength": 1 },
+    "state": { "enum": ["blocked", "ready"] },
+    "next": { "enum": ["review", "materialize"] },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requirements", "accepted", "rejected", "undecided", "stale", "questions", "resolved", "unresolved"],
+      "properties": {
+        "requirements": { "type": "integer", "minimum": 0 },
+        "accepted": { "type": "integer", "minimum": 0 },
+        "rejected": { "type": "integer", "minimum": 0 },
+        "undecided": { "type": "integer", "minimum": 0 },
+        "stale": { "type": "integer", "minimum": 0 },
+        "questions": { "type": "integer", "minimum": 0 },
+        "resolved": { "type": "integer", "minimum": 0 },
+        "unresolved": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "id"],
+        "properties": {
+          "type": { "enum": ["requirement-decision", "requirement-review-stale", "question-resolution", "question-review-stale"] },
+          "id": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

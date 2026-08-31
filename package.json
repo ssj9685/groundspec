@@ -1,0 +1,41 @@
+{
+  "name": "groundspec-js-reference",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Temporary JavaScript conformance reference for groundspec.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssj9685/groundspec.git"
+  },
+  "homepage": "https://github.com/ssj9685/groundspec#readme",
+  "bugs": {
+    "url": "https://github.com/ssj9685/groundspec/issues"
+  },
+  "type": "module",
+  "bin": {
+    "groundspec-reference": "./bin/groundspec.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:report": "node --test --test-reporter=tap --test-reporter-destination=.groundspec/evidence/js-tests.tap",
+    "check:reference": "node ./bin/groundspec.js check",
+    "contracts:build": "bun ./node_modules/mermaid-spec/src/cli.js build ./contracts --out ./contracts/generated",
+    "contracts:test": "bun ./node_modules/mermaid-spec/src/cli.js test ./contracts",
+    "contracts:verify": "bun ./scripts/contracts-verify.js",
+    "contracts:context": "bun ./scripts/contracts-context.js",
+    "contracts:impact:test": "bun ./scripts/contracts-impact.smoke.js",
+    "publication:verify": "node ./scripts/publication-audit.js"
+  },
+  "devDependencies": {
+    "mermaid-spec": "github:ssj9685/mermaid-spec#7cde6be8c8e4e6b0e26ac4f5d58873be5aa3163b"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "bin",
+    "src",
+    "schemas"
+  ]
+}

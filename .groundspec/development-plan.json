@@ -1,0 +1,636 @@
+{
+  "version": 1,
+  "adapter": {
+    "id": "codex-cli",
+    "name": "Codex CLI",
+    "kind": "agent-cli",
+    "executable": "codex",
+    "version": "codex-cli 0.147.0",
+    "auth": "authenticated",
+    "ready": true
+  },
+  "proposal": {
+    "path": ".groundspec/proposal.json",
+    "digest": "d803ee1a7c4cddee928ac7aa594ddb77b82ac4f42da51fdcdd5647266c5517d1"
+  },
+  "review": {
+    "path": ".groundspec/review.json",
+    "digest": "55f7b87811798345468316f2a238bd99761e854d7367d817a165595a240b8bb1"
+  },
+  "projectContext": {
+    "path": ".groundspec/project-context.json",
+    "digest": "66497df65b9435072c90e6562011f96fc501be196edc9529f46b55a8160ed087"
+  },
+  "project": "groundspec",
+  "summary": "Complete the existing single-binary GroundSpec workflow with deterministic intake and lifecycle artifacts, provider-neutral CLI adapters, graph-backed verification, safe publication, and portable release behavior while preserving compatibility for workspaces without a declared graph.",
+  "requirements": [
+    {
+      "id": "PB-01",
+      "title": "Local text-source intake",
+      "behavior": "Accept local HTML, Markdown, and plain-text files in the first intake slice.",
+      "acceptanceCriteria": [
+        "Each supported local format can be ingested without network access.",
+        "Unsupported formats fail with a clear error."
+      ]
+    },
+    {
+      "id": "PB-02",
+      "title": "Deterministic SourceBundle",
+      "behavior": "Emit a deterministic, versioned SourceBundle with source identity, format, raw SHA-256 digest, and ordered text blocks.",
+      "acceptanceCriteria": [
+        "Identical input produces byte-equivalent canonical output.",
+        "The bundle records all required metadata and ordered blocks."
+      ]
+    },
+    {
+      "id": "PB-03",
+      "title": "Stable block metadata",
+      "behavior": "Give every extracted block a stable ID, source line, block kind, section path, and normalized text.",
+      "acceptanceCriteria": [
+        "All blocks contain every required field.",
+        "Repeated intake preserves IDs and ordering."
+      ]
+    },
+    {
+      "id": "PB-04",
+      "title": "Bounded intake semantics",
+      "behavior": "Perform intake without network requests or claims that extracted text is a correct requirement or specification.",
+      "acceptanceCriteria": [
+        "Intake uses only local input.",
+        "Output distinguishes extraction from semantic approval."
+      ]
+    },
+    {
+      "id": "PB-05",
+      "title": "External synthesis boundary",
+      "behavior": "Keep AI and human synthesis outside the deterministic core and exchange synthesis through versioned files.",
+      "acceptanceCriteria": [
+        "Core workflows accept and emit versioned artifacts.",
+        "No synthesis provider is embedded in the core."
+      ]
+    },
+    {
+      "id": "PB-06",
+      "title": "Self-applied graph and proof",
+      "behavior": "Apply the repository graph and proof mechanism to source, specification, design, tests, implementation, and evidence.",
+      "acceptanceCriteria": [
+        "Declared lifecycle artifacts are represented by current graph evidence.",
+        "Missing required proof prevents completion."
+      ]
+    },
+    {
+      "id": "PB-07",
+      "title": "Source-neutral extraction",
+      "behavior": "Do not introduce extraction rules specific to the first external acceptance source.",
+      "acceptanceCriteria": [
+        "Extraction behavior is selected by declared format rather than source identity.",
+        "Conformance fixtures from different origins use the same format handlers."
+      ]
+    },
+    {
+      "id": "PB-08",
+      "title": "Provider-neutral proposal",
+      "behavior": "Represent requirement proposals as provider-neutral artifacts binding every candidate and question to current SourceBundle blocks.",
+      "acceptanceCriteria": [
+        "Every candidate and question has valid current block references.",
+        "Proposal validation is independent of provider identity."
+      ]
+    },
+    {
+      "id": "PB-09",
+      "title": "Structural proposal validation",
+      "behavior": "Validate proposal structure and provenance without deciding semantic correctness.",
+      "acceptanceCriteria": [
+        "Malformed or stale provenance is rejected.",
+        "Structurally valid proposals are not rejected based on statement meaning."
+      ]
+    },
+    {
+      "id": "PB-10",
+      "title": "Separate human review",
+      "behavior": "Record review separately, bind it to exact candidate content, support accept or reject decisions, and resolve proposal questions.",
+      "acceptanceCriteria": [
+        "Review artifacts do not mutate proposals.",
+        "Every decision and resolution binds to reviewable content."
+      ]
+    },
+    {
+      "id": "PB-11",
+      "title": "Review readiness status",
+      "behavior": "Report whether review is blocked or ready for materialization and enumerate every outstanding decision.",
+      "acceptanceCriteria": [
+        "Status is ready only when no required decision is outstanding.",
+        "Blocked status lists all blockers deterministically."
+      ]
+    },
+    {
+      "id": "PB-12",
+      "title": "Versioned adapter protocol",
+      "behavior": "Exchange AI and document-generation work through versioned files; the core neither loads provider SDKs nor executes adapter commands.",
+      "acceptanceCriteria": [
+        "Adapter inputs and outputs have validated versions.",
+        "Core packages have no provider SDK or adapter-execution dependency."
+      ]
+    },
+    {
+      "id": "PB-13",
+      "title": "Workflow self-hosting",
+      "behavior": "Use the proposal, review, and status protocols to develop this workflow slice.",
+      "acceptanceCriteria": [
+        "Repository evidence includes proposal, review, and status protocol coverage for the slice.",
+        "Self-hosting artifacts pass the same validators as user artifacts."
+      ]
+    },
+    {
+      "id": "PB-14",
+      "title": "Safe agent discovery",
+      "behavior": "Discover installed agent CLIs through capability and login-status probes without reading or copying OAuth tokens.",
+      "acceptanceCriteria": [
+        "Discovery uses argv subprocess probes without a shell.",
+        "No credential files or token values are read or persisted."
+      ]
+    },
+    {
+      "id": "PB-15",
+      "title": "Deterministic adapter selection",
+      "behavior": "Honor explicit project adapter selection; auto-select only when exactly one authenticated compatible adapter exists.",
+      "acceptanceCriteria": [
+        "Explicit compatible selection takes precedence.",
+        "Zero or multiple eligible automatic candidates produce a blocking result."
+      ]
+    },
+    {
+      "id": "PB-16",
+      "title": "Workspace bootstrap",
+      "behavior": "From one supported source, create a self-contained workspace, SourceBundle, AI proposal, and review gate.",
+      "acceptanceCriteria": [
+        "Bootstrap creates all four outputs with linked versions and identities.",
+        "Partial failure does not report the review gate as ready."
+      ]
+    },
+    {
+      "id": "PB-17",
+      "title": "Reviewed plan materialization",
+      "behavior": "After review, accept a structured adapter-produced development plan and deterministically materialize SPEC.md, TEST_SPEC.md, DESIGN.md, and an implementation plan.",
+      "acceptanceCriteria": [
+        "Materialization requires a ready review and valid plan.",
+        "Repeated materialization from identical inputs is deterministic."
+      ]
+    },
+    {
+      "id": "PB-18",
+      "title": "Explicit implementation delegation",
+      "behavior": "Only an explicit implementation action delegates workspace changes and records adapter, reviewed plan, changed artifacts, and reported checks.",
+      "acceptanceCriteria": [
+        "No implementation occurs during planning or review.",
+        "The implementation result records every required provenance field."
+      ]
+    },
+    {
+      "id": "PB-19",
+      "title": "Reviewed verification execution",
+      "behavior": "Run only reviewed argv commands without a shell, capture output and exit code, and record fresh graph evidence.",
+      "acceptanceCriteria": [
+        "Unreviewed or shell-form commands are rejected.",
+        "Each executed command has captured results and newly generated graph evidence."
+      ]
+    },
+    {
+      "id": "PB-20",
+      "title": "Complete source support",
+      "behavior": "Accept local HTML, Markdown, text, and text-bearing PDF sources while leaving OCR to an external reader.",
+      "acceptanceCriteria": [
+        "Text-bearing PDFs are ingested locally.",
+        "Image-only PDFs produce a bounded error directing OCR to an external capability."
+      ]
+    },
+    {
+      "id": "PB-21",
+      "title": "Terminal completion gate",
+      "behavior": "Prevent terminal completion until current source, proposal, review, materialization, implementation, verification, and evidence nodes exist.",
+      "acceptanceCriteria": [
+        "Any missing or stale lifecycle node blocks completion.",
+        "Completion succeeds only when all required nodes are current."
+      ]
+    },
+    {
+      "id": "PB-22",
+      "title": "Dogfood failure promotion",
+      "behavior": "Develop each new slice through the latest usable workflow and promote dogfood failures into contracts and regression tests.",
+      "acceptanceCriteria": [
+        "A promoted failure links a contract to a regression test.",
+        "Workflow evidence identifies the usable workflow version."
+      ]
+    },
+    {
+      "id": "PB-23",
+      "title": "Candidate-digest review binding",
+      "behavior": "Bind decisions to individual candidate digests so unchanged decisions survive proposal growth and changed or new candidates block review.",
+      "acceptanceCriteria": [
+        "Unchanged candidate digests retain decisions.",
+        "New or changed digests are reported as outstanding."
+      ]
+    },
+    {
+      "id": "PB-24",
+      "title": "Project-context invariants",
+      "behavior": "Bind planning to reviewed language, framework, source boundary, and constraints and reject silent architecture replacement.",
+      "acceptanceCriteria": [
+        "Plans reproduce approved project-context invariants exactly.",
+        "Conflicting architecture or source-boundary proposals fail validation."
+      ]
+    },
+    {
+      "id": "PB-25",
+      "title": "Optional pinned contract compiler",
+      "behavior": "Allow an executable-contract adapter pinned to mermaid-spec commit 7cde6be8c8e4e6b0e26ac4f5d58873be5aa3163b without adding its compiler or runtime to the Go core or released binary.",
+      "acceptanceCriteria": [
+        "Pin verification checks the exact commit.",
+        "The released Go binary has no Bun or mermaid-spec runtime dependency."
+      ]
+    },
+    {
+      "id": "PB-26",
+      "title": "Explicit contract links",
+      "behavior": "Require stable Mermaid contract identities and explicit implementation, test, consumer, and documentation links; reject missing, duplicate, unknown, or repository-escaping links.",
+      "acceptanceCriteria": [
+        "Every declared contract has valid explicit link categories.",
+        "Invalid or escaping paths fail verification rather than being inferred."
+      ]
+    },
+    {
+      "id": "PB-27",
+      "title": "Bounded impact context",
+      "behavior": "Produce bounded context and propagated impact artifacts containing affected contracts, linked implementation files, and linked tests.",
+      "acceptanceCriteria": [
+        "Context is derived only from explicit graph links.",
+        "Output is deterministic and bounded for context-free agent use."
+      ]
+    },
+    {
+      "id": "PB-28",
+      "title": "Full completion verification",
+      "behavior": "Treat targeted impact tests as advisory and require regenerated artifacts, compiler drift checks, the reviewed full suite, and fresh graph evidence for completion.",
+      "acceptanceCriteria": [
+        "Passing targeted tests alone cannot complete a lifecycle.",
+        "All full-verification evidence is current at completion."
+      ]
+    },
+    {
+      "id": "PB-29",
+      "title": "Safe publication boundary",
+      "behavior": "Publish only explicitly allowlisted repository artifacts with portable adapter provenance, excluding transient context and rejecting local paths, credentials, symlinks, binary content, and oversized files.",
+      "acceptanceCriteria": [
+        "Publication is an explicit separate action.",
+        "Every prohibited artifact class fails closed before upload."
+      ]
+    },
+    {
+      "id": "PB-30",
+      "title": "Portable MIT release",
+      "behavior": "Provide MIT-licensed public reuse through a stable Go install path, versioned self-contained binaries, checksums, and a CI-verified source build.",
+      "acceptanceCriteria": [
+        "Release targets build self-contained Go binaries and checksums.",
+        "CI verifies the documented source installation path and license."
+      ]
+    },
+    {
+      "id": "PB-31",
+      "title": "Safe existing-project initialization",
+      "behavior": "Initialize in a non-empty project without overwriting files and fail closed on reserved workflow-path conflicts.",
+      "acceptanceCriteria": [
+        "Existing unrelated files remain unchanged.",
+        "Any conflicting reserved path stops initialization before writes."
+      ]
+    }
+  ],
+  "design": [
+    {
+      "id": "D-01",
+      "title": "Deterministic artifact core",
+      "requirementIds": [
+        "PB-01",
+        "PB-02",
+        "PB-03",
+        "PB-04",
+        "PB-07",
+        "PB-08",
+        "PB-09",
+        "PB-10",
+        "PB-11",
+        "PB-16",
+        "PB-17",
+        "PB-20",
+        "PB-23",
+        "PB-24",
+        "PB-31"
+      ],
+      "choice": "Keep parsing, canonical serialization, digest binding, validation, status calculation, materialization, and initialization in focused Go standard-library packages under the existing source tree.",
+      "rationale": "This preserves deterministic behavior, portability, and the approved single-CLI architecture."
+    },
+    {
+      "id": "D-02",
+      "title": "External adapter boundary",
+      "requirementIds": [
+        "PB-05",
+        "PB-12",
+        "PB-14",
+        "PB-15",
+        "PB-18"
+      ],
+      "choice": "Define versioned file contracts for proposals, plans, and implementation results; isolate argv-based agent CLI discovery and invocation in the existing external agent adapter package.",
+      "rationale": "Providers remain replaceable and provider SDKs do not enter the core."
+    },
+    {
+      "id": "D-03",
+      "title": "Lifecycle graph and verification",
+      "requirementIds": [
+        "PB-06",
+        "PB-13",
+        "PB-19",
+        "PB-21",
+        "PB-22",
+        "PB-25",
+        "PB-26",
+        "PB-27",
+        "PB-28"
+      ],
+      "choice": "Validate explicit contract links, generate bounded context and impact artifacts, and require fresh graph proof when .groundspec/graph.json exists or --graph is supplied; retain non-graph lifecycle behavior for unadopted workspaces.",
+      "rationale": "This supplies auditable completion evidence without breaking existing workspaces."
+    },
+    {
+      "id": "D-04",
+      "title": "Publication and release boundaries",
+      "requirementIds": [
+        "PB-29",
+        "PB-30"
+      ],
+      "choice": "Keep publication auditing and release assembly as explicit CLI actions using allowlists, fail-closed validation, Go cross-builds, and checksum generation.",
+      "rationale": "Separating publication from implementation limits disclosure risk and keeps releases self-contained."
+    }
+  ],
+  "tests": [
+    {
+      "id": "T-01",
+      "requirementIds": [
+        "PB-01",
+        "PB-02",
+        "PB-03",
+        "PB-04",
+        "PB-07",
+        "PB-20"
+      ],
+      "level": "contract",
+      "given": "Representative HTML, Markdown, text, text-bearing PDF, image-only PDF, and repeated-input fixtures from unrelated sources.",
+      "when": "The intake API processes each fixture and canonical outputs are compared across repeated runs.",
+      "then": "Supported inputs produce deterministic versioned bundles with stable complete block metadata and no network activity; image-only PDF handling remains external and extraction does not assert semantic correctness."
+    },
+    {
+      "id": "T-02",
+      "requirementIds": [
+        "PB-05",
+        "PB-08",
+        "PB-09",
+        "PB-10",
+        "PB-11",
+        "PB-12",
+        "PB-23",
+        "PB-24"
+      ],
+      "level": "contract",
+      "given": "Versioned proposals, reviews, project contexts, valid and stale block references, changed candidate digests, and architecture-conflicting plans.",
+      "when": "Core validators calculate provenance, review readiness, retained decisions, and plan validity.",
+      "then": "Only structurally and provenance-valid artifacts pass, all blockers are reported, semantic judgment stays with review, unchanged digest decisions survive, and approved project invariants are enforced."
+    },
+    {
+      "id": "T-03",
+      "requirementIds": [
+        "PB-14",
+        "PB-15",
+        "PB-16",
+        "PB-17",
+        "PB-18",
+        "PB-31"
+      ],
+      "level": "integration",
+      "given": "Fake agent executables with varied capability and authentication states plus empty and non-empty project fixtures with reserved-path conflicts.",
+      "when": "Discovery, selection, initialization, materialization, and explicit implementation flows run using argv subprocesses.",
+      "then": "Tokens are untouched, selection is deterministic, initialization does not overwrite files, reviewed artifacts materialize deterministically, and only explicit implementation records complete provenance."
+    },
+    {
+      "id": "T-04",
+      "requirementIds": [
+        "PB-06",
+        "PB-13",
+        "PB-19",
+        "PB-21",
+        "PB-22",
+        "PB-25",
+        "PB-26",
+        "PB-27",
+        "PB-28"
+      ],
+      "level": "integration",
+      "given": "Self-hosted lifecycle fixtures with valid and invalid graph links, stale nodes, dogfood failures, optional graph adoption, and the pinned compiler metadata.",
+      "when": "Contract generation, link validation, bounded-context generation, reviewed verification, and completion evaluation run.",
+      "then": "Invalid links and stale evidence fail closed, graph requirements apply only when declared, promoted failures have regression coverage, the exact compiler pin is verified, and terminal completion requires the full fresh evidence set."
+    },
+    {
+      "id": "T-05",
+      "requirementIds": [
+        "PB-29",
+        "PB-30"
+      ],
+      "level": "integration",
+      "given": "Publication fixtures containing allowlisted files and prohibited paths, credentials, symlinks, binary or oversized content, plus supported release targets.",
+      "when": "Publication audit and release build validation run.",
+      "then": "Unsafe publication fails before upload while clean artifacts retain portable provenance, and self-contained versioned Go binaries, checksums, source install, CI build, and MIT licensing are verified."
+    }
+  ],
+  "implementation": {
+    "language": "Go",
+    "framework": "Go standard library",
+    "sourceDirectory": ".",
+    "tasks": [
+      {
+        "id": "I-01",
+        "requirementIds": [
+          "PB-01",
+          "PB-02",
+          "PB-03",
+          "PB-04",
+          "PB-07",
+          "PB-20"
+        ],
+        "description": "Complete format-neutral local intake and canonical SourceBundle generation, adding bounded text-bearing PDF extraction while keeping OCR and network access outside the core."
+      },
+      {
+        "id": "I-02",
+        "requirementIds": [
+          "PB-05",
+          "PB-08",
+          "PB-09",
+          "PB-10",
+          "PB-11",
+          "PB-12",
+          "PB-23",
+          "PB-24"
+        ],
+        "description": "Complete versioned proposal, review, status, and project-context validation with exact provenance and candidate-digest binding and no provider SDK dependencies."
+      },
+      {
+        "id": "I-03",
+        "requirementIds": [
+          "PB-14",
+          "PB-15",
+          "PB-16",
+          "PB-17",
+          "PB-18",
+          "PB-31"
+        ],
+        "description": "Complete safe argv-based agent discovery and selection, non-destructive project initialization, reviewed plan materialization, and explicit implementation-result recording through the existing adapter boundary."
+      },
+      {
+        "id": "I-04",
+        "requirementIds": [
+          "PB-06",
+          "PB-13",
+          "PB-19",
+          "PB-21",
+          "PB-22",
+          "PB-25",
+          "PB-26",
+          "PB-27",
+          "PB-28"
+        ],
+        "description": "Complete explicit contract-link validation, bounded impact context, dogfood regression promotion, reviewed full verification, optional graph adoption, fresh proof gating, and exact mermaid-spec pin verification."
+      },
+      {
+        "id": "I-05",
+        "requirementIds": [
+          "PB-29",
+          "PB-30"
+        ],
+        "description": "Complete fail-closed publication auditing and portable MIT release assembly with stable Go installation, self-contained versioned binaries, checksums, and CI source-build verification."
+      },
+      {
+        "id": "I-06",
+        "requirementIds": [
+          "PB-01",
+          "PB-02",
+          "PB-03",
+          "PB-04",
+          "PB-05",
+          "PB-06",
+          "PB-07",
+          "PB-08",
+          "PB-09",
+          "PB-10",
+          "PB-11",
+          "PB-12",
+          "PB-13",
+          "PB-14",
+          "PB-15",
+          "PB-16",
+          "PB-17",
+          "PB-18",
+          "PB-19",
+          "PB-20",
+          "PB-21",
+          "PB-22",
+          "PB-23",
+          "PB-24",
+          "PB-25",
+          "PB-26",
+          "PB-27",
+          "PB-28",
+          "PB-29",
+          "PB-30",
+          "PB-31"
+        ],
+        "description": "Add or update deterministic unit, contract, integration, conformance, and regression fixtures so every accepted requirement is exercised through the existing Go CLI implementation."
+      }
+    ],
+    "verificationCommands": [
+      {
+        "id": "V-01",
+        "workingDirectory": ".",
+        "argv": [
+          "go",
+          "test",
+          "./..."
+        ],
+        "optional": false
+      },
+      {
+        "id": "V-02",
+        "workingDirectory": ".",
+        "argv": [
+          "go",
+          "vet",
+          "./..."
+        ],
+        "optional": false
+      },
+      {
+        "id": "V-03",
+        "workingDirectory": ".",
+        "argv": [
+          "go",
+          "build",
+          "./cmd/groundspec"
+        ],
+        "optional": false
+      },
+      {
+        "id": "V-04",
+        "workingDirectory": ".",
+        "argv": [
+          "bun",
+          "run",
+          "scripts/verify-contract-pin.js"
+        ],
+        "optional": false
+      },
+      {
+        "id": "V-05",
+        "workingDirectory": ".",
+        "argv": [
+          "bun",
+          "run",
+          "scripts/contracts-verify.js"
+        ],
+        "optional": false
+      },
+      {
+        "id": "V-06",
+        "workingDirectory": ".",
+        "argv": [
+          "bun",
+          "run",
+          "scripts/contracts-impact.smoke.js"
+        ],
+        "optional": false
+      },
+      {
+        "id": "V-07",
+        "workingDirectory": ".",
+        "argv": [
+          "bun",
+          "run",
+          "scripts/publication-audit.js"
+        ],
+        "optional": false
+      },
+      {
+        "id": "V-08",
+        "workingDirectory": ".",
+        "argv": [
+          "npm",
+          "test"
+        ],
+        "optional": false
+      }
+    ]
+  }
+}

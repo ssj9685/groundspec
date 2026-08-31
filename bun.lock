@@ -1,0 +1,15 @@
+{
+  "lockfileVersion": 1,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "groundspec-js-reference",
+      "devDependencies": {
+        "mermaid-spec": "github:ssj9685/mermaid-spec#7cde6be8c8e4e6b0e26ac4f5d58873be5aa3163b",
+      },
+    },
+  },
+  "packages": {
+    "mermaid-spec": ["mermaid-spec@github:ssj9685/mermaid-spec#7cde6be", { "bin": { "mermaid-spec": "./src/cli.js" } }, "ssj9685-mermaid-spec-7cde6be", "sha512-gtSvyh4G5n6kSJArHinYFqegIoeFwI3I1jqUZim6+V+MH5QqeMI/5OFiKE/NEjatbk2kUd+xdcnWis0+Sv+THA=="],
+  }
+}

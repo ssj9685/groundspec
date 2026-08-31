@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "lifecycle-status.schema.json",
+  "title": "GroundSpec Lifecycle Status",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "state", "next", "blockers"],
+  "properties": {
+    "version": { "type": "integer", "const": 1 },
+    "state": { "enum": ["blocked", "complete"] },
+    "next": { "type": "string", "minLength": 1 },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["stage", "reason"],
+        "properties": { "stage": { "enum": ["source-proposal", "review", "materialization", "implementation", "verification", "evidence"] }, "reason": { "type": "string", "minLength": 1 } }
+      }
+    }
+  }
+}

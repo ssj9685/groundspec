@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "proof.schema.json",
+  "title": "GroundSpec Proof",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "node", "digest", "result", "recordedAt"],
+  "properties": {
+    "version": { "const": 1 },
+    "node": { "type": "string", "minLength": 1 },
+    "digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "result": { "enum": ["passed", "failed"] },
+    "recordedAt": { "type": "string", "format": "date-time" },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "digest"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "note": { "type": "string" }
+  }
+}

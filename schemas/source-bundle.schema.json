@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "source-bundle.schema.json",
+  "title": "GroundSpec Source Bundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "source", "blocks"],
+  "properties": {
+    "version": { "const": 1 },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "format", "digest"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "format": { "enum": ["html", "markdown", "text", "pdf"] },
+        "digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "kind", "line", "section", "text"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^B-[a-f0-9]{12}$" },
+          "kind": { "enum": ["heading", "paragraph", "list-item", "code", "table-cell"] },
+          "line": { "type": "integer", "minimum": 1 },
+          "section": { "type": "array", "items": { "type": "string" } },
+          "text": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

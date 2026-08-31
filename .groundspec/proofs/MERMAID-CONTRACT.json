@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "node": "MERMAID-CONTRACT",
+  "digest": "5abbde5e6a75b2d0994b840573c5d7b74d2a2c5d648c53d1f169b3b1f792421c",
+  "result": "passed",
+  "recordedAt": "2026-08-31T21:08:06.144836Z",
+  "evidence": {
+    "path": "test-or-verification/commands/V-05.log",
+    "digest": "2f77c69303d94c9188397465b25002a83d085b91d35777ccc5774f175c596cfd"
+  },
+  "note": "Pinned Mermaid contracts generated and verified"
+}

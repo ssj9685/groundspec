@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "node": "T-01",
+  "digest": "dac096de34b457e4029a9a90949e769d7c9da80eab0f8e8f1f32c2b897b688e1",
+  "result": "passed",
+  "recordedAt": "2026-08-31T20:34:35.276962Z",
+  "evidence": {
+    "path": "evidence/result.txt",
+    "digest": "9ea9849d3e6c7763512ad0d0b9971114b9f73a626ab5eae3beba050930ebf234"
+  },
+  "note": "shared conformance fixture"
+}

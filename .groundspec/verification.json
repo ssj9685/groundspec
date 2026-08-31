@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "plan": {
+    "path": ".groundspec/development-plan.json",
+    "digest": "ea0d7a8710ded5cf6f1e66de89ebc2b7fe2d8725ff861910d7a2630cda927f40"
+  },
+  "implementation": {
+    "path": ".groundspec/implementation-result.json",
+    "digest": "7bddb5174c1b3e6555f6ec6ab982a90689a8f97d6a6d35d54773e7766f1430b9"
+  },
+  "passed": true,
+  "commands": [
+    {
+      "id": "V-01",
+      "argv": [
+        "go",
+        "test",
+        "./..."
+      ],
+      "workingDirectory": ".",
+      "exitCode": 0,
+      "passed": true,
+      "optional": false,
+      "log": {
+        "path": "test-or-verification/commands/V-01.log",
+        "digest": "7637523129b8ddfcdbb1125d93902c814c104728eb5cb9d17b1c08926f183566"
+      }
+    },
+    {
+      "id": "V-02",
+      "argv": [
+        "go",
+        "vet",
+        "./..."
+      ],
+      "workingDirectory": ".",
+      "exitCode": 0,
+      "passed": true,
+      "optional": false,
+      "log": {
+        "path": "test-or-verification/commands/V-02.log",
+        "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "V-03",
+      "argv": [
+        "go",
+        "build",
+        "./cmd/groundspec"
+      ],
+      "workingDirectory": ".",
+      "exitCode": 0,
+      "passed": true,
+      "optional": false,
+      "log": {
+        "path": "test-or-verification/commands/V-03.log",
+        "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "V-04",
+      "argv": [
+        "bun",
+        "run",
+        "scripts/verify-contract-pin.js"
+      ],
+      "workingDirectory": ".",
+      "exitCode": 0,
+      "passed": true,
+      "optional": false,
+      "log": {
+        "path": "test-or-verification/commands/V-04.log",
+        "digest": "0e239d4a75504c6547d04579589f60ae1d8b717a12e129567d64fc777568a33b"
+      }
+    },
+    {
+      "id": "V-05",
+      "argv": [
+        "bun",
+        "run",
+        "scripts/contracts-verify.js"
+      ],
+      "workingDirectory": ".",
+      "exitCode": 0,
+      "passed": true,
+      "optional": false,
+      "log": {
+        "path": "test-or-verification/commands/V-05.log",
+        "digest": "779e1990acac36d8fc59da9da0ff102288cb787e185370ee5d3e6e78661d86ae"
+      }
+    },
+    {
+      "id": "V-06",
+      "argv": [
+        "bun",
+        "run",
+        "scripts/contracts-impact.smoke.js"
+      ],
+      "workingDirectory": ".",
+      "exitCode": 0,
+      "passed": true,
+      "optional": false,
+      "log": {
+        "path": "test-or-verification/commands/V-06.log",
+        "digest": "b5b6adc474443050dcaa5afce38bf3358ec3cd94d706dae287220a18a72c8f5e"
+      }
+    },
+    {
+      "id": "V-07",
+      "argv": [
+        "bun",
+        "run",
+        "scripts/publication-audit.js"
+      ],
+      "workingDirectory": ".",
+      "exitCode": 0,
+      "passed": true,
+      "optional": false,
+      "log": {
+        "path": "test-or-verification/commands/V-07.log",
+        "digest": "e95912ba26995cb0c37d36707ab76782c5eff067176567ede7a20da7856ca7d2"
+      }
+    },
+    {
+      "id": "V-08",
+      "argv": [
+        "npm",
+        "test"
+      ],
+      "workingDirectory": ".",
+      "exitCode": 0,
+      "passed": true,
+      "optional": false,
+      "log": {
+        "path": "test-or-verification/commands/V-08.log",
+        "digest": "687843738f9d8c007797c9fcaaf58a8fa78c8991bb68b8837bb852e704c46fce"
+      }
+    }
+  ],
+  "recordedAt": "2026-08-31T21:07:31.611099Z"
+}

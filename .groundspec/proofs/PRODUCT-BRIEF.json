@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "node": "PRODUCT-BRIEF",
+  "digest": "0f84df8b331e11902647f498de60bd9600ec4103814cc97a67285661d9cdf134",
+  "result": "passed",
+  "recordedAt": "2026-08-31T21:08:06.067438Z",
+  "evidence": {
+    "path": ".groundspec/sources/product-brief.json",
+    "digest": "705f35367cc7fa197112f33fa6bc91e9f7f99491a0c985584d652c8e9caa0126"
+  },
+  "note": "GroundSpec public release brief ingested deterministically"
+}

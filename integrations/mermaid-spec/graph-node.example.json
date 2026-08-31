@@ -1,0 +1,7 @@
+{
+  "id": "MERMAID-CONTRACT",
+  "kind": "executable-contract",
+  "inputs": ["package.json", "bun.lock", "scripts/verify-contract-pin.js", "scripts/contracts-verify.js", "contracts", "mermaid-spec.links.json"],
+  "dependsOn": ["PRODUCT-SPEC", "PRODUCT-DESIGN", "PRODUCT-TEST-SPEC"],
+  "proof": ".groundspec/proofs/MERMAID-CONTRACT.json"
+}

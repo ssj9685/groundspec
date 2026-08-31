@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "source": {
+    "path": "sample.html",
+    "format": "html",
+    "digest": "753300af8df5a716ace91f8e6c9b4de4a1be9edf3d46d91d05e929d67b1b4579"
+  },
+  "blocks": [
+    {
+      "id": "B-d8506eea7c03",
+      "kind": "heading",
+      "line": 9,
+      "section": [
+        "Product \u0026 Scope"
+      ],
+      "text": "Product \u0026 Scope"
+    },
+    {
+      "id": "B-1d9b495beedc",
+      "kind": "paragraph",
+      "line": 10,
+      "section": [
+        "Product \u0026 Scope"
+      ],
+      "text": "First visible paragraph."
+    },
+    {
+      "id": "B-f1a0d4a027d8",
+      "kind": "heading",
+      "line": 12,
+      "section": [
+        "Product \u0026 Scope",
+        "Requirements"
+      ],
+      "text": "Requirements"
+    },
+    {
+      "id": "B-cb54a8e61f60",
+      "kind": "list-item",
+      "line": 14,
+      "section": [
+        "Product \u0026 Scope",
+        "Requirements"
+      ],
+      "text": "Works offline."
+    },
+    {
+      "id": "B-1c3b9a78731f",
+      "kind": "list-item",
+      "line": 15,
+      "section": [
+        "Product \u0026 Scope",
+        "Requirements"
+      ],
+      "text": "Preserves source lines."
+    },
+    {
+      "id": "B-141bfcf93712",
+      "kind": "table-cell",
+      "line": 17,
+      "section": [
+        "Product \u0026 Scope",
+        "Requirements"
+      ],
+      "text": "Cell value"
+    }
+  ]
+}
