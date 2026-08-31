@@ -1,0 +1,44 @@
+{
+  "title": "GroundSpec Requirement Review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "proposal", "decisions", "resolutions"],
+  "properties": {
+    "version": { "const": 1 },
+    "proposal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 }
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "candidateDigest", "decision"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "candidateDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "decision": { "enum": ["accepted", "rejected"] },
+          "note": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "resolutions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "candidateDigest", "answer"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "candidateDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "answer": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

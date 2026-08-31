@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "file": "dogfood-failure-lifecycle.md",
+      "sha256": "430af742a45b49edc652f37aeffa57ae7909437774305e45ab50a65854b69d34"
+    },
+    {
+      "file": "workflow-lifecycle.md",
+      "sha256": "a87cc0e131902715c0bd8ddea9400c0fd6c4fec4315af253030ebe3e01fa5ade"
+    }
+  ],
+  "models": [],
+  "machines": [
+    "DogfoodFailurePromotion",
+    "GroundSpecLifecycle"
+  ],
+  "operations": [],
+  "artifacts": {
+    "dogfood-failure-promotion.machine.generated.ts": {
+      "sha256": "3914608841d91d1f397278878d138f6318c8de3f2b8085227ba9591dfa51619b"
+    },
+    "dogfood-failure-promotion.machine.generated.js": {
+      "sha256": "1c86811b62eb1f091ff6f3280979918c2502a70606699d2f257056007f1a3688"
+    },
+    "ground-spec-lifecycle.machine.generated.ts": {
+      "sha256": "4db295deb63fcd4c6d1570c08bbcef15b8c5135ff1c16264e91706ba2f097ee6"
+    },
+    "ground-spec-lifecycle.machine.generated.js": {
+      "sha256": "d3704818ddd1700f004d85c40e513c6555c87e554f9ed5a387d0655830e08495"
+    },
+    "contract-graph.generated.json": {
+      "sha256": "bb831e5d300f871a4eabcf7fee9b2533197a9412d81398ce1826a65e87df99c7"
+    }
+  }
+}

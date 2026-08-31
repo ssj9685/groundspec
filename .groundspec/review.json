@@ -1,0 +1,231 @@
+{
+  "version": 1,
+  "proposal": {
+    "path": ".groundspec/proposal.json"
+  },
+  "decisions": [
+    {
+      "id": "PB-01",
+      "candidateDigest": "c363915e05cef8367bef7aa405c422a3d42715a927769ff28c1bbb6b6418ee5f",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-02",
+      "candidateDigest": "35167951e88b577dc2f56256c3cbc6eb0b608e019e4355ecaf2cccd1976cc21f",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-03",
+      "candidateDigest": "46a0753a2478a808128c7bd6b0af5809f935042f6ca9c2dd4df120c840f6f502",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-04",
+      "candidateDigest": "737bcffb4e3fe3214b0c67ffcaeaed20e3146a54f6ff73c3e0a021a390a49709",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-05",
+      "candidateDigest": "8635788aef2495293d50d5ffd55495bde519006bddf95c007a6c5f188c6ad447",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-06",
+      "candidateDigest": "74355b1db98489806f8400c42099d94d12a4d66a08537c398b2057d2349cdff3",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-07",
+      "candidateDigest": "05d3f59c5377f0567299fef56d86558e0abd1e4ee4eb7920d74024a592f5face",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-08",
+      "candidateDigest": "aa1fd20918b75494704f1c452970c26f35d6ee25e9bfe2e41efd6ff2123f6a7d",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-09",
+      "candidateDigest": "efd92d36d48a796721a1b92fb7c2ac410b7c973899f1b122b3e24f9e8fdb6175",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-10",
+      "candidateDigest": "2021fb7f60e159f8908ee6e2de4622635b591fc887989f9882545db1c474b1a8",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-11",
+      "candidateDigest": "2b453c6a0bb711bf0e11f122f9f559f2823b4eb6890a7273f8c247660c9a2c27",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-12",
+      "candidateDigest": "2931c8426e0e20350ff49c466b6f808f0f1de0b5e954ea63ad9cae49ea835db8",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-13",
+      "candidateDigest": "dddea800e233d003667f6d2b81acd912c690e7be88be88c683a5e9d6f44880e8",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-14",
+      "candidateDigest": "310c3942d4e1da7652f6db8c25ccc0f6cebea66f393d5ab3093a5ce000708f61",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-15",
+      "candidateDigest": "c57a23c9cf91e595e5cd4ef5fd889e67251c74daf2a396ba9d84478cd0caf582",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-16",
+      "candidateDigest": "e975ea1088736890489d79402e3fb02c5c118a949d4dd7e9d933f22524660365",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-17",
+      "candidateDigest": "5b7eaefb63de29335b1c128b09570c5707e0f5559fd7df2829027257e8da1fe8",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-18",
+      "candidateDigest": "fd666b69f71ce28d390cf6b9c8c8f815d7bb5a2e1b096b8b733c35d164a1f142",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-19",
+      "candidateDigest": "1da683b761375f1314ae056c7ab2ed89bcc1bc6ef2ee49241e37a692aef46510",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-20",
+      "candidateDigest": "7bc3905b3d184f9ad9c612f781e1666aab4200c68788cdd6a93701333e2307c4",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-21",
+      "candidateDigest": "f1f766d6f4d4921bba6e4e70b87a6541b9373bc56d116a53db24e0eff028a627",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-22",
+      "candidateDigest": "40c0147ef28913e9e29eeb274f978725493af0ce700d64c54a47b9097f49fb70",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-23",
+      "candidateDigest": "3a2383a6d6c84f9ced2aad9fedbe9146c481fd7cc79f46b345fde03a92d90458",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-24",
+      "candidateDigest": "acf1520730067f426550a92b7bfb7769782fbca1db8aeb9080f0db6d80cb9568",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-25",
+      "candidateDigest": "d4ecd1a55c82cf71da38d5ada705b8a564e9ace056da891beec4b78a7104a827",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-26",
+      "candidateDigest": "baa100adee06a9b97c33ad892a01aada8be435c795347aada1ad89d5918ce7e5",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-27",
+      "candidateDigest": "97ba4386add02b007e90c68ac15954e03dca1c59c1c9ea8ab0ad92baae77f033",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-28",
+      "candidateDigest": "b8ef466f125f4d608d0203a352f8841872129528b414c14fd584953dc75437c9",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-29",
+      "candidateDigest": "32c8c80c24cb53d4f60f451111d4d4ff5cec573b6a458b05b8e1610b6b22707e",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-30",
+      "candidateDigest": "2282da853ee05290076168b2839153221fcfbc33ba4553cc343649d4127d21b7",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-31",
+      "candidateDigest": "b0daf701c50cd8e7d21ccfaadcd8a7a953ed3b4e36a5f038a5a142db0eb9f685",
+      "decision": "accepted",
+      "note": "Approved as an explicit product requirement from PRODUCT_BRIEF.md"
+    },
+    {
+      "id": "PB-32",
+      "candidateDigest": "c102499936c372b6f7c0522b7beb04711eba5fbf4eb7ab5555b54259b5b0b686",
+      "decision": "rejected",
+      "note": "Excluded as a duplicate boundary or non-goal already covered by accepted PB requirements"
+    },
+    {
+      "id": "PB-33",
+      "candidateDigest": "bf70d5f0f72317da47191632ffbe68787522e4728306c9757e7dad1ddd287de9",
+      "decision": "rejected",
+      "note": "Excluded as a duplicate boundary or non-goal already covered by accepted PB requirements"
+    },
+    {
+      "id": "PB-34",
+      "candidateDigest": "34bcf0ec30d3388b05c907b17f240a9a5b0672a1e32e6ca092d3eb159c5975f1",
+      "decision": "rejected",
+      "note": "Excluded as a duplicate boundary or non-goal already covered by accepted PB requirements"
+    },
+    {
+      "id": "PB-35",
+      "candidateDigest": "24b1368186bea20f46204460d3b709f79f3f6e230a4c66f310250d2508c80bc9",
+      "decision": "rejected",
+      "note": "Excluded as a duplicate boundary or non-goal already covered by accepted PB requirements"
+    },
+    {
+      "id": "PB-36",
+      "candidateDigest": "eb1c463361ad40dcbd2d119f8f6ef7bf4db8549f8e72602babebaab919f6eb92",
+      "decision": "rejected",
+      "note": "Excluded as a duplicate boundary or non-goal already covered by accepted PB requirements"
+    },
+    {
+      "id": "PB-37",
+      "candidateDigest": "5cf2023d8037b9f5d783804b5b08ca03b7f490e386dc722ac01ba6e3cfe39363",
+      "decision": "rejected",
+      "note": "Excluded as a duplicate boundary or non-goal already covered by accepted PB requirements"
+    }
+  ],
+  "resolutions": []
+}

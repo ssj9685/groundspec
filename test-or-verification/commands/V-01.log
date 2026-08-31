@@ -1,0 +1,6 @@
+?   	github.com/ssj9685/groundspec/cmd/groundspec	[no test files]
+ok  	github.com/ssj9685/groundspec/internal/agent	(cached)
+ok  	github.com/ssj9685/groundspec/internal/core	0.803s
+ok  	github.com/ssj9685/groundspec/internal/intake	4.319s
+ok  	github.com/ssj9685/groundspec/internal/pipeline	(cached)
+ok  	github.com/ssj9685/groundspec/internal/workflow	(cached)

@@ -1,0 +1,338 @@
+{
+  "version": 1,
+  "plan": {
+    "path": ".groundspec/development-plan.json",
+    "digest": "a67c2223726c893dcdf05b0e95fcff0e5639b84008c58dbe7a739d3b416a9b17"
+  },
+  "adapter": {
+    "id": "codex-cli",
+    "name": "Codex CLI",
+    "kind": "agent-cli",
+    "executable": "codex",
+    "version": "codex-cli 0.147.0",
+    "auth": "authenticated",
+    "ready": true
+  },
+  "summary": "Completed and verified the PB-30 release slice: module-installed binaries resolve their version, release configuration is regression-tested, and protected artifacts remain unchanged. Existing workflow/CLI edits were preserved; release tests were added. Action versions were cross-checked against official GitHub action sources.",
+  "artifacts": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "digest": "519853cecb3a8bf4de41248a80c3d1e3165df800686a45d02fb60c65ec7e8881"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "digest": "016b82bb596184a1aacbf04c71388c93ae8f39a22b476c43d3ecf0812cb99e31"
+    },
+    {
+      "path": ".gitignore",
+      "digest": "bf64f2d5621c2551eec4cc9bec95aa7e198ae5d9b5e93a317fccfb97f2f9c933"
+    },
+    {
+      "path": "LICENSE",
+      "digest": "2e45ab8134c63763b6434a1ded502971a958cb71aabc9adb84922e10238658df"
+    },
+    {
+      "path": "PRODUCT_BRIEF.md",
+      "digest": "545ea0e62243c456355b26178a61d4941e91ea0600d8f2dc97d220e81ac8640a"
+    },
+    {
+      "path": "README.md",
+      "digest": "2bbcfa56076decf57064d23a57dfc203306cbb33e51274908a90bfb71d444f81"
+    },
+    {
+      "path": "TEST_SPEC.md",
+      "digest": "b71719498e8c4b1279c493c37364ea61a0f6fe286da3423a5b30b1ae5ec99418"
+    },
+    {
+      "path": "bin/groundspec.js",
+      "digest": "cb5949c968d957fe9961e731fd71c5c1d42d1cba9dd1c60528b0696725fef308"
+    },
+    {
+      "path": "bun.lock",
+      "digest": "41efb71c0ece273e4db5d9b4ebe587b1bcdb494784cceb64b10938aa181c3607"
+    },
+    {
+      "path": "cmd/groundspec/main.go",
+      "digest": "4c840b2586eb0f94810c1fcb4557b8eae35746d0d89de51d305db505734e4fe1"
+    },
+    {
+      "path": "contracts/dogfood-failure-lifecycle.md",
+      "digest": "430af742a45b49edc652f37aeffa57ae7909437774305e45ab50a65854b69d34"
+    },
+    {
+      "path": "contracts/generated/contract-graph.generated.json",
+      "digest": "bb831e5d300f871a4eabcf7fee9b2533197a9412d81398ce1826a65e87df99c7"
+    },
+    {
+      "path": "contracts/generated/dogfood-failure-promotion.machine.generated.js",
+      "digest": "1c86811b62eb1f091ff6f3280979918c2502a70606699d2f257056007f1a3688"
+    },
+    {
+      "path": "contracts/generated/dogfood-failure-promotion.machine.generated.ts",
+      "digest": "3914608841d91d1f397278878d138f6318c8de3f2b8085227ba9591dfa51619b"
+    },
+    {
+      "path": "contracts/generated/ground-spec-lifecycle.machine.generated.js",
+      "digest": "d3704818ddd1700f004d85c40e513c6555c87e554f9ed5a387d0655830e08495"
+    },
+    {
+      "path": "contracts/generated/ground-spec-lifecycle.machine.generated.ts",
+      "digest": "4db295deb63fcd4c6d1570c08bbcef15b8c5135ff1c16264e91706ba2f097ee6"
+    },
+    {
+      "path": "contracts/generated/mermaid-spec.manifest.json",
+      "digest": "05a424d17319304397003d5ca78f7cc932c2789952b1ed52817d1c2ae2cee3ba"
+    },
+    {
+      "path": "contracts/workflow-lifecycle.md",
+      "digest": "a87cc0e131902715c0bd8ddea9400c0fd6c4fec4315af253030ebe3e01fa5ade"
+    },
+    {
+      "path": "docs/getting-started.md",
+      "digest": "b536aa1aee5977f425aea2ebc66322c2d0093b40457b5a142c1f887a3a6d15f6"
+    },
+    {
+      "path": "go.mod",
+      "digest": "41fdfac12655793b2e383c3716d2f69906e8cabd7807317d12732e71ebbc907a"
+    },
+    {
+      "path": "integrations/mermaid-spec/README.md",
+      "digest": "846aeea9262d742a25ba48c9ff604935253442ff4f7afbd68e4ad0e5887ddd55"
+    },
+    {
+      "path": "integrations/mermaid-spec/graph-node.example.json",
+      "digest": "0598d94d7e99843a4317cf76e9627650f1523ee50ec1b1e98ace0e52a424a397"
+    },
+    {
+      "path": "integrations/proposal-adapter/README.md",
+      "digest": "8cc0e5daff7e4e17ff9ce3c01123914a428c72109ac6a01d3e34c2e3021b486f"
+    },
+    {
+      "path": "internal/agent/agent.go",
+      "digest": "d1babd2db3349556d63de95a87304d6b441a3478fd40ebba3198b707432261a6"
+    },
+    {
+      "path": "internal/agent/agent_test.go",
+      "digest": "b8367e7c056d16f6d7fe2a87ff7e4fe0e911973f4d32dc991378310f20dd9743"
+    },
+    {
+      "path": "internal/core/cli.go",
+      "digest": "4fb6c4c0a1eef82d4aa8d243b4613a0d701ee04fffc44712aeebe347c436688a"
+    },
+    {
+      "path": "internal/core/core.go",
+      "digest": "82a4fdfb86a361c9ac1515491afaccf5e3d951918ab1010308706e87d0a139bd"
+    },
+    {
+      "path": "internal/core/core_test.go",
+      "digest": "ff497cf30a49678f9da3587811488db8869cd537884e74bd2196b6a8748b5f44"
+    },
+    {
+      "path": "internal/intake/intake.go",
+      "digest": "f971ea44388bb9b6632a0a6648a2515926b0c31b06efb1c63d72b5121d2dab4d"
+    },
+    {
+      "path": "internal/intake/intake_test.go",
+      "digest": "94f74e0c1bd3f470c2abdab1cec26baf420bfbe7c494e60657d688f7a5001894"
+    },
+    {
+      "path": "internal/pipeline/pipeline.go",
+      "digest": "6a7e623c92587851755a765cdfc412c38e706418fbbba105b82c7788daf83015"
+    },
+    {
+      "path": "internal/pipeline/pipeline_test.go",
+      "digest": "00aca7ccd190158fafc2e32c8d039b660b90f75c61b34b9390f8150d39eea053"
+    },
+    {
+      "path": "internal/workflow/workflow.go",
+      "digest": "e17262ac0d67ba618bdc575c40cf776c694882f6976e34170665adcc76320a75"
+    },
+    {
+      "path": "internal/workflow/workflow_test.go",
+      "digest": "22cadb0e87ce1ceb63f08dbeb73a1d09defea426cc1a29bc978e0ad897084474"
+    },
+    {
+      "path": "mermaid-spec.links.json",
+      "digest": "f469bf79e60f14cda6cdcb9576c5e7ef004cda7d154333d24d887aa9b757b212"
+    },
+    {
+      "path": "package.json",
+      "digest": "5eec3ee41d526ecbb1dd954d0791fe07b0e86f830683009cc07c2ba7b0399cdd"
+    },
+    {
+      "path": "publication-policy.json",
+      "digest": "0713a698a94292639b61a8048665fb0d04d3a07dd2b79b34e5b09187cf65460a"
+    },
+    {
+      "path": "release/targets.json",
+      "digest": "45806b115d43ee71b806c04bf878d37d57f8b84bef315896281bb3ffc5c1e6cb"
+    },
+    {
+      "path": "schemas/contract-graph.schema.json",
+      "digest": "0cb0bde65c5994ffcbd01d56ad00b809a2a943a60ec26d952d7a572ea406d662"
+    },
+    {
+      "path": "schemas/development-plan.schema.json",
+      "digest": "a8d2e7c60a39a9f5c2b8588c470e121ffec3b29eb0f5af191a9b326a44d5f76e"
+    },
+    {
+      "path": "schemas/implementation-result.schema.json",
+      "digest": "61835601ef542a978b2b7bd9d32b0124f99090e351137401a5d8afc7855cfc10"
+    },
+    {
+      "path": "schemas/lifecycle-status.schema.json",
+      "digest": "ff2f7bd60a5bb2caab66deac3481fd63cc7671b7911d9582418dc7afb23263ca"
+    },
+    {
+      "path": "schemas/project-context.schema.json",
+      "digest": "ecc8f2227cb5016b7879f289189e30c1305076b239c16587bbcafab9466fa222"
+    },
+    {
+      "path": "schemas/proof.schema.json",
+      "digest": "00b01ae5e5a1a322a90c0f1100526d0d3c3c80d70aba368207fe9b3a0f515095"
+    },
+    {
+      "path": "schemas/requirement-ledger.schema.json",
+      "digest": "5edea9d1944630c54b3c2a298b7771e3eae827fb1c0dc626c79e833a7d8e03b2"
+    },
+    {
+      "path": "schemas/requirement-proposal.schema.json",
+      "digest": "cebcb344d33bc82ce4920dbf8c181468de706ae8fb5a4b0ba05daf16cc7d9ae9"
+    },
+    {
+      "path": "schemas/requirement-review.schema.json",
+      "digest": "2f6d13378315853fb0ea5cc6dbd7bab0c54303978c8b5447fdb8500c0887624d"
+    },
+    {
+      "path": "schemas/source-bundle.schema.json",
+      "digest": "8fcbe711f563e1917a49bb212f7dbb0876a7c58e15790384049186cfda82bff3"
+    },
+    {
+      "path": "schemas/verification-result.schema.json",
+      "digest": "68fdaebe5e869ace49bb283cdf6e38df7a2d412c734fb348baea98633bbbe67b"
+    },
+    {
+      "path": "schemas/workflow-status.schema.json",
+      "digest": "a309bafa1d28ea7589d8f9235b3e51aa3c4b63a38609289d7d421b8860a9ecf1"
+    },
+    {
+      "path": "scripts/contracts-context.js",
+      "digest": "494cb11a2dca63b95e42bfc8e4b96154a3fc5025fd2a0ab1436fcbc55777e24c"
+    },
+    {
+      "path": "scripts/contracts-impact.smoke.js",
+      "digest": "424fc943d488c2a3513e1c0a1fc87dacf2ed7b133a4677e837ca86e3cc8c888e"
+    },
+    {
+      "path": "scripts/contracts-verify.js",
+      "digest": "c911f95bdb2779980572f2a96a502432de4798175df54b6a43a93ad50f12c481"
+    },
+    {
+      "path": "scripts/publication-audit.js",
+      "digest": "8a1f9e30cc0f11583affc2986de584cff5ec4d8900f1fc282f3245c3abf29b17"
+    },
+    {
+      "path": "scripts/verify-contract-pin.js",
+      "digest": "ead12171f0df4ecc32303453c0ba5f5001f1fc106669a1589003fca9144521e7"
+    },
+    {
+      "path": "src/cli.js",
+      "digest": "2adb6896e93ce6cb934ceaeec826af27d58d3ad6af80c49b294816782c2a4960"
+    },
+    {
+      "path": "src/core.js",
+      "digest": "8fc314f8b34f8d4cbf7f7f9f7841bd62893dbc581b215c885ea2824de3897beb"
+    },
+    {
+      "path": "src/publication.js",
+      "digest": "d1ff3e5b2c7e8dc1965d324a0e7c1c6d4e2109356ca471182c5d9220e05db8e2"
+    },
+    {
+      "path": "test/cli.test.js",
+      "digest": "f22230a476dcfc9b6b5111709d6955215e6b9f3ef778dc260ac79b7e9fea6334"
+    },
+    {
+      "path": "test/core.test.js",
+      "digest": "b80f6f29508e790ac900b88473735586c5f6c05fa16393498c8f27555f9aee04"
+    },
+    {
+      "path": "test/publication.test.js",
+      "digest": "2b2b8bab610a7236bdc58a5fac023c4e44b2132e111810ee0b43cfed46e078c7"
+    },
+    {
+      "path": "testdata/conformance/v1/SPEC.txt",
+      "digest": "77024ffe1df532565e98d5e1defbdc356f36d25fd656772e0a95a5368e9b6740"
+    },
+    {
+      "path": "testdata/conformance/v1/evidence/result.txt",
+      "digest": "2700165975f68815c97d605c56eca8e90d497ade1264b6282401d13fee99ac27"
+    },
+    {
+      "path": "testdata/conformance/v1/expected.json",
+      "digest": "4b7587f9718c49f8e1577b86c8fa4599b3e36309ea7eafc3c421f0ed28ae8289"
+    },
+    {
+      "path": "testdata/conformance/v1/graph.json",
+      "digest": "f1b52c9b4be1b9acfa92528678767165af8ab11eb15e855c9ba35c443da9b149"
+    },
+    {
+      "path": "testdata/conformance/v1/suite/alpha.txt",
+      "digest": "b6a98d9ce9a2d9149288fa3df42d377c3e42737afdcdaf714e33c0a100b51060"
+    },
+    {
+      "path": "testdata/conformance/v1/suite/한글.txt",
+      "digest": "90ea373abef000917146711ea473e8d9e13e9cf56e71ddb6417ed4287f9102d5"
+    },
+    {
+      "path": "testdata/intake/expected.json",
+      "digest": "3cf94b3e6f842d4fdc473774d6dc8f09601992698f5b3de838dc4c3ed9752569"
+    },
+    {
+      "path": "testdata/intake/sample.html",
+      "digest": "753300af8df5a716ace91f8e6c9b4de4a1be9edf3d46d91d05e929d67b1b4579"
+    },
+    {
+      "path": "testdata/intake/sample.md",
+      "digest": "f096b3b9f1ce92cad95e530f900bc2e394f28fc7c3728e7adef4d571e12737b7"
+    },
+    {
+      "path": "testdata/intake/sample.txt",
+      "digest": "e8d8212d6e23d85459d694c5887c96ef2b7a336b5bfa5a9513e9507044a2b3dd"
+    }
+  ],
+  "changes": [
+    {
+      "path": "internal/core/core_test.go",
+      "kind": "modified",
+      "beforeDigest": "10f39698e2b9abf3a5b4f0b3dacd7eacf594f7dc389a543336c03bd72f24b58c",
+      "afterDigest": "ff497cf30a49678f9da3587811488db8869cd537884e74bd2196b6a8748b5f44"
+    }
+  ],
+  "reportedChecks": [
+    {
+      "command": "go test ./...",
+      "result": "Passed using task-local Go caches."
+    },
+    {
+      "command": "go vet ./... \u0026\u0026 go build ./cmd/groundspec",
+      "result": "Passed using task-local Go caches; binary output directed to /tmp."
+    },
+    {
+      "command": "release version-stamp smoke test",
+      "result": "Passed; output: groundspec v0.0.0-test."
+    },
+    {
+      "command": "V-04 through V-07 Bun verification scripts",
+      "result": "All passed, including contract pin, contract links/impact, and publication audit."
+    },
+    {
+      "command": "npm test",
+      "result": "Passed: 20 tests, 1 platform-specific skip."
+    },
+    {
+      "command": "git diff --check and protected artifact SHA-256 checks",
+      "result": "Passed; approved proposal, review, project context, and protected documents are unchanged."
+    }
+  ],
+  "recordedAt": "2026-08-31T22:18:28.594005Z"
+}

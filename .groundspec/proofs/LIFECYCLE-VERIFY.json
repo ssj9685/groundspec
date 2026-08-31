@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "node": "LIFECYCLE-VERIFY",
+  "digest": "93fe0044e3c354da2fbe1c544586ad0f62407d33d574f39b844cbed182820e2c",
+  "result": "passed",
+  "recordedAt": "2026-08-31T22:20:27.267425Z",
+  "evidence": {
+    "path": ".groundspec/verification.json",
+    "digest": "2b867797212195f348d9fed45881a392dbe20e594df2f030de23f93a34992b11"
+  }
+}

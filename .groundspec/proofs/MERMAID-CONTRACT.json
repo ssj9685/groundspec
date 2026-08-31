@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "node": "MERMAID-CONTRACT",
+  "digest": "768e9be0680b15d008591edd47434d9e4c99789721fe68092f603fd6c1206a90",
+  "result": "passed",
+  "recordedAt": "2026-08-31T22:20:27.150446Z",
+  "evidence": {
+    "path": "test-or-verification/commands/V-05.log",
+    "digest": "2f77c69303d94c9188397465b25002a83d085b91d35777ccc5774f175c596cfd"
+  }
+}

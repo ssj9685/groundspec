@@ -1,0 +1,17 @@
+{
+  "frameDigest": "cb635b95f0a9a18ac1b469cf34c92ae6e9cc8271afbc2863f29563b9b516cf4d",
+  "exitCode": 0,
+  "overall": "healthy",
+  "nodes": [
+    {
+      "id": "SC-01",
+      "status": "declared",
+      "digest": "5b563320afc068d0b9ae97cfaff30a606bab97d433feeffef6e240d17917d43f"
+    },
+    {
+      "id": "T-01",
+      "status": "passed",
+      "digest": "dac096de34b457e4029a9a90949e769d7c9da80eab0f8e8f1f32c2b897b688e1"
+    }
+  ]
+}

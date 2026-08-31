@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "project": "groundspec",
+  "language": "Go",
+  "framework": "Go standard library",
+  "sourceDirectory": ".",
+  "constraints": [
+    "Preserve the deterministic core and external agent CLI adapter boundary.",
+    "Do not introduce provider SDK dependencies into the core.",
+    "Use argv subprocess execution without a shell.",
+    "Keep the implementation minimal and portable as a single Go CLI.",
+    "Pin optional mermaid-spec tooling to commit 7cde6be8c8e4e6b0e26ac4f5d58873be5aa3163b and keep Bun outside the released Go binary.",
+    "Generate bounded agent context from explicit contract-to-file links and require full verification before terminal completion.",
+    "Require graph evidence when a repository declares .groundspec/graph.json or passes --graph, while preserving lifecycle compatibility for workspaces that have not adopted a graph."
+  ]
+}

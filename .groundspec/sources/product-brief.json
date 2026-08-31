@@ -1,0 +1,528 @@
+{
+  "version": 1,
+  "source": {
+    "path": "PRODUCT_BRIEF.md",
+    "format": "markdown",
+    "digest": "545ea0e62243c456355b26178a61d4941e91ea0600d8f2dc97d220e81ac8640a"
+  },
+  "blocks": [
+    {
+      "id": "B-604f466c6da4",
+      "kind": "heading",
+      "line": 1,
+      "section": [
+        "Product Brief"
+      ],
+      "text": "Product Brief"
+    },
+    {
+      "id": "B-5b35e0639eb4",
+      "kind": "paragraph",
+      "line": 3,
+      "section": [
+        "Product Brief"
+      ],
+      "text": "This is the manually approved bootstrap seed for `groundspec`."
+    },
+    {
+      "id": "B-2d11c162b51f",
+      "kind": "heading",
+      "line": 5,
+      "section": [
+        "Product Brief",
+        "Product objective"
+      ],
+      "text": "Product objective"
+    },
+    {
+      "id": "B-ee740cabcd9e",
+      "kind": "paragraph",
+      "line": 7,
+      "section": [
+        "Product Brief",
+        "Product objective"
+      ],
+      "text": "Given source material in different formats, help a human and an AI move from source evidence to specifications, design, tests, implementation, and fresh verification evidence without hiding assumptions or unresolved decisions."
+    },
+    {
+      "id": "B-c936861ce666",
+      "kind": "heading",
+      "line": 9,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "Bootstrap requirements"
+    },
+    {
+      "id": "B-f8d9222b4e83",
+      "kind": "list-item",
+      "line": 11,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-01`: The first intake slice accepts local HTML, Markdown, and plain-text files."
+    },
+    {
+      "id": "B-41e09589636c",
+      "kind": "list-item",
+      "line": 12,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-02`: Intake emits a deterministic, versioned `SourceBundle` containing source identity, format, raw SHA-256 digest, and ordered text blocks."
+    },
+    {
+      "id": "B-246a160a2ccb",
+      "kind": "list-item",
+      "line": 13,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-03`: Every block has a stable ID, source line, block kind, section path, and normalized text."
+    },
+    {
+      "id": "B-7925079437f4",
+      "kind": "list-item",
+      "line": 14,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-04`: Intake performs no network request and makes no claim that extracted text is a correct requirement or specification."
+    },
+    {
+      "id": "B-c02ba7b71d5c",
+      "kind": "list-item",
+      "line": 15,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-05`: AI or human synthesis remains outside the deterministic core and communicates through versioned files."
+    },
+    {
+      "id": "B-b7d998611a26",
+      "kind": "list-item",
+      "line": 16,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-06`: The repository uses its own graph and proof mechanism on its source, specification, design, tests, implementation, and evidence."
+    },
+    {
+      "id": "B-fc8e9ba11a86",
+      "kind": "list-item",
+      "line": 17,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-07`: The first external acceptance source may not introduce source-specific extraction rules into the product."
+    },
+    {
+      "id": "B-98a10c53a0fb",
+      "kind": "list-item",
+      "line": 18,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-08`: A requirement proposal is a provider-neutral artifact that binds every candidate and question to current `SourceBundle` blocks."
+    },
+    {
+      "id": "B-19ceae103322",
+      "kind": "list-item",
+      "line": 19,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-09`: The core validates proposal provenance and structure without deciding whether a proposed statement is semantically correct."
+    },
+    {
+      "id": "B-4c5d8b7f8005",
+      "kind": "list-item",
+      "line": 20,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-10`: Human review is recorded separately from the proposal, binds to the exact reviewable candidate content, and can accept or reject requirements and resolve questions."
+    },
+    {
+      "id": "B-556dca5391e6",
+      "kind": "list-item",
+      "line": 21,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-11`: The core reports whether review is blocked or ready for specification materialization and identifies every outstanding decision."
+    },
+    {
+      "id": "B-6b99e3783c17",
+      "kind": "list-item",
+      "line": 22,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-12`: External AI and document-generation adapters communicate through versioned files; the core does not load a provider SDK or execute adapter commands."
+    },
+    {
+      "id": "B-985e4aacfa6e",
+      "kind": "list-item",
+      "line": 23,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-13`: The repository uses the proposal, review, and status protocols to develop this workflow slice itself."
+    },
+    {
+      "id": "B-de96e28e8a09",
+      "kind": "list-item",
+      "line": 24,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-14`: The product discovers installed agent CLIs through safe capability and login-status probes and never reads or copies their OAuth tokens."
+    },
+    {
+      "id": "B-3f58b69a111f",
+      "kind": "list-item",
+      "line": 25,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-15`: An explicit project adapter selection wins; automatic selection is allowed only when exactly one authenticated compatible adapter is available."
+    },
+    {
+      "id": "B-f10074fd7298",
+      "kind": "list-item",
+      "line": 26,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-16`: Starting from one supported source creates a self-contained workspace, deterministic SourceBundle, AI requirement proposal, and review gate."
+    },
+    {
+      "id": "B-c2cea79084c0",
+      "kind": "list-item",
+      "line": 27,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-17`: After review, the selected adapter produces a structured development plan from which the core deterministically materializes `SPEC.md`, `TEST_SPEC.md`, `DESIGN.md`, and an implementation plan."
+    },
+    {
+      "id": "B-d44b03698800",
+      "kind": "list-item",
+      "line": 28,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-18`: An explicit implementation action delegates workspace changes to the authenticated agent and records the adapter, reviewed plan, changed artifacts, and reported checks."
+    },
+    {
+      "id": "B-1d15ce10c924",
+      "kind": "list-item",
+      "line": 29,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-19`: An explicit verification action runs only reviewed argv-style commands without a shell, captures their outputs and exit codes, and records fresh graph evidence."
+    },
+    {
+      "id": "B-2b9d7a19e1e9",
+      "kind": "list-item",
+      "line": 30,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-20`: The first complete product accepts local HTML, Markdown, text, and text-bearing PDF sources; OCR remains an external reader capability."
+    },
+    {
+      "id": "B-9280b825672c",
+      "kind": "list-item",
+      "line": 31,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-21`: A project cannot report terminal completion until source, proposal, review, materialization, implementation, verification, and evidence nodes all exist and are current."
+    },
+    {
+      "id": "B-f2fd1d101362",
+      "kind": "list-item",
+      "line": 32,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-22`: The repository develops every new slice through its own latest usable workflow and promotes dogfood failures into product contracts and regression tests."
+    },
+    {
+      "id": "B-839df82a8c15",
+      "kind": "list-item",
+      "line": 33,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-23`: Review decisions bind to individual candidate digests so unchanged decisions survive proposal growth while new or changed candidates become explicit blockers."
+    },
+    {
+      "id": "B-5b3ed7abd3df",
+      "kind": "list-item",
+      "line": 34,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-24`: Development planning binds to reviewed project context such as an existing language, framework, source boundary, and constraints, and the core rejects silent architecture replacement."
+    },
+    {
+      "id": "B-053cf71898b4",
+      "kind": "list-item",
+      "line": 35,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-25`: An optional executable-contract adapter may pin an exact external compiler revision without making that compiler or its runtime a dependency of the Go core or released binary."
+    },
+    {
+      "id": "B-944ffe888bc4",
+      "kind": "list-item",
+      "line": 36,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-26`: Mermaid contracts use stable contract identities and explicit implementation, test, consumer, and documentation links; missing, duplicate, unknown, or repository-escaping links fail verification instead of being inferred."
+    },
+    {
+      "id": "B-39471c280eca",
+      "kind": "list-item",
+      "line": 37,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-27`: A contract change can produce bounded context and propagated impact artifacts for a context-free agent, including affected contracts, linked implementation files, and linked tests."
+    },
+    {
+      "id": "B-45a35b79026b",
+      "kind": "list-item",
+      "line": 38,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-28`: Targeted impact tests are advisory; terminal completion still requires regenerated artifacts, compiler drift verification, the reviewed full verification suite, and fresh graph evidence."
+    },
+    {
+      "id": "B-7d94dc1cb321",
+      "kind": "list-item",
+      "line": 39,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-29`: Publication is a separate explicit boundary that exposes only allowlisted repository artifacts, stores portable adapter provenance, excludes transient context, and rejects local user paths, credential-shaped material, symlinks, binary content, and oversized files before upload."
+    },
+    {
+      "id": "B-e2ee77a93516",
+      "kind": "list-item",
+      "line": 40,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-30`: GroundSpec is publicly reusable under the MIT license through a stable Go install path, versioned self-contained binaries, checksums, and a CI-verified source build."
+    },
+    {
+      "id": "B-bee977fbbcc3",
+      "kind": "list-item",
+      "line": 41,
+      "section": [
+        "Product Brief",
+        "Bootstrap requirements"
+      ],
+      "text": "`PB-31`: A user can initialize GroundSpec in an existing non-empty project without overwriting existing files, while reserved workflow-path conflicts fail closed."
+    },
+    {
+      "id": "B-aa52fdc7cda9",
+      "kind": "heading",
+      "line": 43,
+      "section": [
+        "Product Brief",
+        "Decision boundary"
+      ],
+      "text": "Decision boundary"
+    },
+    {
+      "id": "B-23ed39dd64f4",
+      "kind": "paragraph",
+      "line": 45,
+      "section": [
+        "Product Brief",
+        "Decision boundary"
+      ],
+      "text": "The deterministic core preserves source evidence. An external human or AI may classify blocks as explicit requirements, inferred requirements, assumptions, or unresolved decisions. A separate review may reject candidates. The core must not silently convert inference into fact."
+    },
+    {
+      "id": "B-9da6c251ca1e",
+      "kind": "paragraph",
+      "line": 47,
+      "section": [
+        "Product Brief",
+        "Decision boundary"
+      ],
+      "text": "An AI proposal is never an approval. Every proposed requirement and unresolved question must receive a separate human review decision before the workflow reports that specification materialization is ready."
+    },
+    {
+      "id": "B-5ed908b4b095",
+      "kind": "heading",
+      "line": 49,
+      "section": [
+        "Product Brief",
+        "v0 non-goals"
+      ],
+      "text": "v0 non-goals"
+    },
+    {
+      "id": "B-5d781eb69969",
+      "kind": "list-item",
+      "line": 51,
+      "section": [
+        "Product Brief",
+        "v0 non-goals"
+      ],
+      "text": "image, audio, or built-in OCR ingestion;"
+    },
+    {
+      "id": "B-ab5e3b64e9ca",
+      "kind": "list-item",
+      "line": 52,
+      "section": [
+        "Product Brief",
+        "v0 non-goals"
+      ],
+      "text": "extracting, copying, or exposing another tool's authentication token;"
+    },
+    {
+      "id": "B-06c528b3067b",
+      "kind": "list-item",
+      "line": 53,
+      "section": [
+        "Product Brief",
+        "v0 non-goals"
+      ],
+      "text": "silently choosing one provider when multiple authenticated adapters are available;"
+    },
+    {
+      "id": "B-f79c7110b1a3",
+      "kind": "list-item",
+      "line": 54,
+      "section": [
+        "Product Brief",
+        "v0 non-goals"
+      ],
+      "text": "automatic acceptance of generated specifications;"
+    },
+    {
+      "id": "B-1d56ac06fee9",
+      "kind": "list-item",
+      "line": 55,
+      "section": [
+        "Product Brief",
+        "v0 non-goals"
+      ],
+      "text": "silently replacing an established implementation language or source boundary during planning;"
+    },
+    {
+      "id": "B-d2385183d54b",
+      "kind": "list-item",
+      "line": 56,
+      "section": [
+        "Product Brief",
+        "v0 non-goals"
+      ],
+      "text": "executing AI-proposed verification commands without an explicit implementation or verification action;"
+    },
+    {
+      "id": "B-cb3c01accc69",
+      "kind": "list-item",
+      "line": 57,
+      "section": [
+        "Product Brief",
+        "v0 non-goals"
+      ],
+      "text": "browser submission or other external publication;"
+    },
+    {
+      "id": "B-37a50b5e3019",
+      "kind": "list-item",
+      "line": 58,
+      "section": [
+        "Product Brief",
+        "v0 non-goals"
+      ],
+      "text": "guaranteeing that a hiring assignment or product review will pass."
+    },
+    {
+      "id": "B-3f96170b581e",
+      "kind": "list-item",
+      "line": 59,
+      "section": [
+        "Product Brief",
+        "v0 non-goals"
+      ],
+      "text": "claiming that an AI change is semantically correct solely because a contract-to-file link exists."
+    },
+    {
+      "id": "B-068bb643e5c3",
+      "kind": "list-item",
+      "line": 60,
+      "section": [
+        "Product Brief",
+        "v0 non-goals"
+      ],
+      "text": "uploading, committing, or pushing any artifact automatically."
+    },
+    {
+      "id": "B-229375204e86",
+      "kind": "heading",
+      "line": 62,
+      "section": [
+        "Product Brief",
+        "Terminal acceptance scenario"
+      ],
+      "text": "Terminal acceptance scenario"
+    },
+    {
+      "id": "B-49d8265baaa0",
+      "kind": "paragraph",
+      "line": 64,
+      "section": [
+        "Product Brief",
+        "Terminal acceptance scenario"
+      ],
+      "text": "From a new workspace containing only one supported source and an available authenticated agent CLI, the product can produce a reviewed requirement set, materialized specification set, runnable implementation, executed verification evidence, and a healthy complete lifecycle report without an API key or direct access to the agent's OAuth token."
+    }
+  ]
+}

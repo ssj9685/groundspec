@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "nodes": [
+    {
+      "id": "SC-01",
+      "kind": "behavior",
+      "inputs": ["SPEC.txt"]
+    },
+    {
+      "id": "T-01",
+      "kind": "verification",
+      "inputs": ["suite"],
+      "dependsOn": ["SC-01"],
+      "proof": ".proofs/T-01.json"
+    }
+  ]
+}

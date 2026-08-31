@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "development-plan.schema.json",
+  "title": "GroundSpec Development Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "adapter", "proposal", "review", "project", "summary", "requirements", "design", "tests", "implementation"],
+  "properties": {
+    "version": { "type": "integer", "const": 1 },
+    "adapter": { "$ref": "#/$defs/adapter" },
+    "proposal": { "$ref": "#/$defs/reference" },
+    "review": { "$ref": "#/$defs/reference" },
+    "projectContext": { "$ref": "#/$defs/reference" },
+    "project": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string", "minLength": 1 },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "title", "behavior", "acceptanceCriteria"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "behavior": { "type": "string", "minLength": 1 },
+          "acceptanceCriteria": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+        }
+      }
+    },
+    "design": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "title", "requirementIds", "choice", "rationale"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "requirementIds": { "$ref": "#/$defs/idList" },
+          "choice": { "type": "string", "minLength": 1 },
+          "rationale": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "tests": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "requirementIds", "level", "given", "when", "then"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "requirementIds": { "$ref": "#/$defs/idList" },
+          "level": { "enum": ["unit", "contract", "integration", "browser", "smoke"] },
+          "given": { "type": "string", "minLength": 1 },
+          "when": { "type": "string", "minLength": 1 },
+          "then": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "implementation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["language", "framework", "sourceDirectory", "tasks", "verificationCommands"],
+      "properties": {
+        "language": { "type": "string", "minLength": 1 },
+        "framework": { "type": "string", "minLength": 1 },
+        "sourceDirectory": { "type": "string", "minLength": 1 },
+        "tasks": {
+          "type": "array", "minItems": 1,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["id", "requirementIds", "description"],
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "requirementIds": { "$ref": "#/$defs/idList" },
+              "description": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        "verificationCommands": {
+          "type": "array", "minItems": 1,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["id", "workingDirectory", "argv"],
+            "properties": {
+              "id": { "type": "string", "pattern": "^[A-Za-z0-9._-]+$" },
+              "workingDirectory": { "type": "string", "minLength": 1 },
+              "argv": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+              "optional": { "type": "boolean", "default": false }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "reference": {
+      "type": "object", "additionalProperties": false, "required": ["path", "digest"],
+      "properties": { "path": { "type": "string", "minLength": 1 }, "digest": { "type": "string", "pattern": "^[a-f0-9]{64}$" } }
+    },
+    "adapter": {
+      "type": "object", "additionalProperties": false, "required": ["id", "name", "kind", "auth", "ready"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 }, "name": { "type": "string", "minLength": 1 }, "kind": { "type": "string", "minLength": 1 },
+        "executable": { "type": "string", "pattern": "^[^/\\\\]+$" }, "version": { "type": "string" }, "auth": { "const": "authenticated" }, "ready": { "const": true }, "reason": { "type": "string", "maxLength": 0 }
+      }
+    },
+    "idList": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+  }
+}

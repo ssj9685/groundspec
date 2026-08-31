@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "candidate": "v0.1.0",
+  "hostSmoke": {
+    "version": "groundspec v0.1.0",
+    "help": "usage: groundspec adapters [--json] | groundspec start <source> --output <directory> [--adapter id] [--json] | groundspec init <source> [--output directory] [--adapter id] [--json] | groundspec ingest <source> [--json] | groundspec draft <bundle> --output <proposal> [--adapter id] [--json] | groundspec proposal validate <proposal> [--json] | groundspec review <proposal> [--review path] (--accept id | --reject id | --resolve id --answer text) [--note text] [--json] | groundspec status <proposal> [--review path] [--json] | groundspec materialize <proposal> [--review path] [--output path] [--adapter id] [--json] | groundspec implement <plan> [--output path] [--adapter id] [--json] | groundspec verify <plan> [--implementation path] [--output path] [--json] | groundspec lifecycle [--proposal path] [--review path] [--plan path] [--implementation path] [--verification path] [--graph path] [--json] | groundspec check [--graph path] [--json] | groundspec attest <node> --result passed|failed [--evidence path] [--note text] [--graph path] [--json]"
+  },
+  "targets": [
+    {
+      "target": {
+        "os": "darwin",
+        "arch": "arm64",
+        "cgo": false
+      },
+      "artifact": {
+        "name": "groundspec",
+        "sha256": "c6657f8ca79ad1178aecf5252091232b3e0d3c5f90431642e1ac1017405dbbe0",
+        "size": 3605058
+      }
+    },
+    {
+      "target": {
+        "os": "darwin",
+        "arch": "amd64",
+        "cgo": false
+      },
+      "artifact": {
+        "name": "groundspec",
+        "sha256": "3e14a6b9d92a7716476eb8b6aa38c3b13156d6f8a0d86d9ec960adceb17691c9",
+        "size": 3847344
+      }
+    },
+    {
+      "target": {
+        "os": "linux",
+        "arch": "arm64",
+        "cgo": false
+      },
+      "artifact": {
+        "name": "groundspec",
+        "sha256": "ee4329ddea3b5e23a43aed060536578a5d7a830236af3159b289704c66a63e3d",
+        "size": 3604640
+      }
+    },
+    {
+      "target": {
+        "os": "linux",
+        "arch": "amd64",
+        "cgo": false
+      },
+      "artifact": {
+        "name": "groundspec",
+        "sha256": "e0d454d58df30f44323545ddacac51cc802d4ea2e9555d13fdb0b6fc739f6f15",
+        "size": 3842208
+      }
+    },
+    {
+      "target": {
+        "os": "windows",
+        "arch": "amd64",
+        "cgo": false
+      },
+      "artifact": {
+        "name": "groundspec.exe",
+        "sha256": "777ad15954f0cf91aed939f27ae98c20127fe8701bfc260794b3efdf4c89e904",
+        "size": 3996672
+      }
+    }
+  ],
+  "result": "passed"
+}

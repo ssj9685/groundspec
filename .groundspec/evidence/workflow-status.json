@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "proposal": ".groundspec/proposal.json",
+  "review": ".groundspec/review.json",
+  "state": "ready",
+  "next": "materialize",
+  "summary": {
+    "requirements": 37,
+    "accepted": 31,
+    "rejected": 6,
+    "undecided": 0,
+    "stale": 0,
+    "questions": 0,
+    "resolved": 0,
+    "unresolved": 0
+  },
+  "blockers": []
+}
