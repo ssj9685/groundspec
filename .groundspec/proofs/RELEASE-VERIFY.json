@@ -3,10 +3,10 @@
   "node": "RELEASE-VERIFY",
   "digest": "b465f88c2e8b0bedf904dbf3e6d4ab2d4ddd48d4279dcf6b6f629cf9f41224e2",
   "result": "passed",
-  "recordedAt": "2026-08-31T21:08:06.134502Z",
+  "recordedAt": "2026-08-31T21:12:09.337324Z",
   "evidence": {
     "path": ".groundspec/evidence/groundspec-release-matrix.json",
     "digest": "0fddbb94db242bf07a7dadafe5750552d76bebf3dbcc239ca36a99eea5ab00a7"
   },
-  "note": "Five CGO-disabled release targets built and host binary smoked"
+  "note": "Five CGO-disabled targets built and corrected release workflow validated"
 }

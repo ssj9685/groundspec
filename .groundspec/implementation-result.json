@@ -13,11 +13,11 @@
     "auth": "authenticated",
     "ready": true
   },
-  "summary": "Approved implementation was already complete; no source changes were necessary. Protected files and .groundspec artifacts were left untouched. All implementation checks passed; lifecycle remains blocked until the surrounding workflow refreshes its implementation and verification evidence.",
+  "summary": "The approved implementation was already present and matched all three approved artifact digests, so no source changes were necessary. The pre-existing `.github/workflows/ci.yml` modification was preserved. Lifecycle correctly reports that modification as stale implementation evidence.",
   "artifacts": [
     {
       "path": ".github/workflows/ci.yml",
-      "digest": "ef9fb12e798358c50042485fc8c148853eb21e87a948a3730165775c41d1b969"
+      "digest": "d4d55daac044c1e0d34512e7db762dfde48d551b2fda1ac4f1dc4a9dad0aa702"
     },
     {
       "path": ".github/workflows/release.yml",
@@ -311,8 +311,8 @@
       "result": "Passed"
     },
     {
-      "command": "go build -o /tmp/groundspec-approved-plan-build ./cmd/groundspec",
-      "result": "Passed"
+      "command": "go build ./cmd/groundspec",
+      "result": "Passed; emitted a non-fatal sandbox cache warning"
     },
     {
       "command": "bun run scripts/verify-contract-pin.js",
@@ -328,20 +328,24 @@
     },
     {
       "command": "bun run scripts/publication-audit.js",
-      "result": "Passed; 108 allowlisted files verified"
+      "result": "Passed"
     },
     {
       "command": "npm test",
-      "result": "Passed; 20 passed, 1 platform-specific skip"
+      "result": "Passed: 20 passed, 1 skipped"
     },
     {
-      "command": "groundspec proposal validate / status",
-      "result": "Passed; proposal valid and review ready"
+      "command": "git diff --check",
+      "result": "Passed"
     },
     {
-      "command": "groundspec check / lifecycle",
-      "result": "Expected blocked state: protected implementation, verification, and graph evidence require refresh by the surrounding workflow"
+      "command": "go run ./cmd/groundspec check --json",
+      "result": "Passed; graph healthy"
+    },
+    {
+      "command": "go run ./cmd/groundspec lifecycle --json",
+      "result": "Correctly blocked by the pre-existing `.github/workflows/ci.yml` modification and stale verification record"
     }
   ],
-  "recordedAt": "2026-08-31T21:07:27.332585Z"
+  "recordedAt": "2026-08-31T21:11:56.693655Z"
 }

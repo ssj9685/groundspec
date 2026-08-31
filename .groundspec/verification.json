@@ -6,7 +6,7 @@
   },
   "implementation": {
     "path": ".groundspec/implementation-result.json",
-    "digest": "7bddb5174c1b3e6555f6ec6ab982a90689a8f97d6a6d35d54773e7766f1430b9"
+    "digest": "a66605b1c37a35f017de15cdee58b73e9fc3c0f77e56d2bb66d196dea68e40d1"
   },
   "passed": true,
   "commands": [
@@ -23,7 +23,7 @@
       "optional": false,
       "log": {
         "path": "test-or-verification/commands/V-01.log",
-        "digest": "7637523129b8ddfcdbb1125d93902c814c104728eb5cb9d17b1c08926f183566"
+        "digest": "605e4664c94a54bdcbdb570e3043a4e5c51e1ba7e63b8fb825565579ea6f25e3"
       }
     },
     {
@@ -134,9 +134,9 @@
       "optional": false,
       "log": {
         "path": "test-or-verification/commands/V-08.log",
-        "digest": "687843738f9d8c007797c9fcaaf58a8fa78c8991bb68b8837bb852e704c46fce"
+        "digest": "83a7dc8452d48742880f1782479bb39489470b076a1649365dd3cc0f958950eb"
       }
     }
   ],
-  "recordedAt": "2026-08-31T21:07:31.611099Z"
+  "recordedAt": "2026-08-31T21:12:07.576991Z"
 }

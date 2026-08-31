@@ -2,27 +2,27 @@
 > groundspec-js-reference@0.0.0 test
 > node --test
 
-✔ TV-08: check exposes stable JSON and exit codes (260.6165ms)
-✔ TV-08: invalid graphs exit with code 2 (28.764875ms)
-✔ TV-10: JavaScript CLI matches the shared conformance exit code (29.488083ms)
-✔ TV-09: frame digests are language-neutral and byte-exact (0.652458ms)
-✔ TV-10: JavaScript matches the shared conformance fixture (5.047708ms)
-﹣ TV-09: non-UTF-8 repository entry names are rejected (1.269791ms) # filesystem rejects non-UTF-8 names before the checker
-✔ TV-01 and TV-02: a missing proof becomes fresh after attestation (4.6285ms)
-✔ TV-03: changing an upstream input makes dependent proof stale (2.371791ms)
-✔ TV-04: a fresh failed attestation keeps the graph failed (1.524542ms)
-✔ TV-05: missing dependencies and cycles are rejected (1.202875ms)
-✔ TV-06: paths outside the project root are rejected (0.544ms)
-✔ TV-06: attestation evidence cannot escape the project root (1.495625ms)
-✔ TV-06: a proof cannot be stored inside its own input directory (1.508375ms)
-✔ TV-07: changed or missing evidence makes a proof stale (2.5195ms)
-✔ PB-29: publication candidates require an explicit allowlist entry (0.405417ms)
-✔ PB-29: malformed publication policy fails closed (0.326167ms)
-✔ PB-29: publication audit rejects binary content (0.08025ms)
-✔ PB-29: publication audit rejects invalid UTF-8 text (0.061375ms)
-✔ PB-29: publication audit rejects oversized allowlisted files before upload (121.915667ms)
-✔ PB-29: persisted adapter records allow only portable provenance (0.214125ms)
-✔ PB-29: publication audit rejects symlinks without following them (112.759708ms)
+✔ TV-08: check exposes stable JSON and exit codes (247.918083ms)
+✔ TV-08: invalid graphs exit with code 2 (26.843375ms)
+✔ TV-10: JavaScript CLI matches the shared conformance exit code (27.260834ms)
+✔ TV-09: frame digests are language-neutral and byte-exact (0.672375ms)
+✔ TV-10: JavaScript matches the shared conformance fixture (4.34225ms)
+﹣ TV-09: non-UTF-8 repository entry names are rejected (1.164708ms) # filesystem rejects non-UTF-8 names before the checker
+✔ TV-01 and TV-02: a missing proof becomes fresh after attestation (4.62675ms)
+✔ TV-03: changing an upstream input makes dependent proof stale (2.283292ms)
+✔ TV-04: a fresh failed attestation keeps the graph failed (1.539709ms)
+✔ TV-05: missing dependencies and cycles are rejected (1.166625ms)
+✔ TV-06: paths outside the project root are rejected (0.554292ms)
+✔ TV-06: attestation evidence cannot escape the project root (1.497209ms)
+✔ TV-06: a proof cannot be stored inside its own input directory (0.862334ms)
+✔ TV-07: changed or missing evidence makes a proof stale (2.08475ms)
+✔ PB-29: publication candidates require an explicit allowlist entry (0.400292ms)
+✔ PB-29: malformed publication policy fails closed (0.320416ms)
+✔ PB-29: publication audit rejects binary content (0.077333ms)
+✔ PB-29: publication audit rejects invalid UTF-8 text (0.059417ms)
+✔ PB-29: publication audit rejects oversized allowlisted files before upload (117.088042ms)
+✔ PB-29: persisted adapter records allow only portable provenance (0.214292ms)
+✔ PB-29: publication audit rejects symlinks without following them (106.486666ms)
 ℹ tests 21
 ℹ suites 0
 ℹ pass 20
@@ -30,4 +30,4 @@
 ℹ cancelled 0
 ℹ skipped 1
 ℹ todo 0
-ℹ duration_ms 370.532792
+ℹ duration_ms 351.678458
