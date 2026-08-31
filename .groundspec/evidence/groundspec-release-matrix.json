@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "candidate": "v0.1.0",
+  "candidate": "v0.1.1",
   "hostSmoke": {
-    "version": "groundspec v0.1.0",
-    "help": "usage: groundspec adapters [--json] | groundspec start <source> --output <directory> [--adapter id] [--json] | groundspec init <source> [--output directory] [--adapter id] [--json] | groundspec ingest <source> [--json] | groundspec draft <bundle> --output <proposal> [--adapter id] [--json] | groundspec proposal validate <proposal> [--json] | groundspec review <proposal> [--review path] (--accept id | --reject id | --resolve id --answer text) [--note text] [--json] | groundspec status <proposal> [--review path] [--json] | groundspec materialize <proposal> [--review path] [--output path] [--adapter id] [--json] | groundspec implement <plan> [--output path] [--adapter id] [--json] | groundspec verify <plan> [--implementation path] [--output path] [--json] | groundspec lifecycle [--proposal path] [--review path] [--plan path] [--implementation path] [--verification path] [--graph path] [--json] | groundspec check [--graph path] [--json] | groundspec attest <node> --result passed|failed [--evidence path] [--note text] [--graph path] [--json]"
+    "version": "groundspec v0.1.1",
+    "help": "GroundSpec turns source material into reviewed implementation work.\n\nUsage:\n  groundspec <command> [options]\n\nStart a workflow:\n  adapters [--json]\n      List compatible authenticated agent CLIs.\n  init <source> [--output <directory>] [--adapter <id>] [--json]\n      Initialize GroundSpec inside an existing project.\n  start <source> --output <directory> [--adapter <id>] [--json]\n      Create a new isolated GroundSpec workspace.\n  ingest <source> [--json]\n      Extract deterministic blocks from HTML, Markdown, text, or PDF.\n\nReview and plan:\n  draft <bundle> --output <proposal> [--adapter <id>] [--json]\n      Ask an adapter to propose source-linked requirements.\n  proposal validate <proposal> [--json]\n      Validate proposal structure and source provenance.\n  review <proposal> [--review <path>]\n      (--accept <id> | --reject <id> | --resolve <id> --answer <text>) [--note <text>] [--json]\n      Record one decision or question resolution in the separate review artifact.\n  status <proposal> [--review <path>] [--json]\n      Show unresolved review decisions and questions.\n  materialize <proposal> [--review <path>] [--output <path>] [--adapter <id>] [--json]\n      Write reviewed specification, design, test, and implementation plans.\n\nImplement and verify:\n  implement <plan> [--output <path>] [--adapter <id>] [--json]\n      Explicitly delegate implementation and record changed artifacts.\n  verify <plan> [--implementation <path>] [--output <path>] [--json]\n      Run only reviewed argv verification commands.\n  lifecycle [--graph <path>] [--json]\n      Report the next required workflow stage or terminal completion.\n  check [--graph <path>] [--json]\n      Check whether every proof-bearing graph node has current evidence.\n  attest <node> --result passed|failed [--evidence <path>] [--note <text>] [--graph <path>] [--json]\n      Record fresh evidence for one graph node.\n\nExamples:\n  groundspec adapters\n  groundspec init ./requirements.md --adapter codex-cli\n  groundspec status .groundspec/proposal.json\n  groundspec lifecycle\n\nDocumentation: https://github.com/ssj9685/groundspec"
   },
   "targets": [
     {
@@ -14,7 +14,7 @@
       },
       "artifact": {
         "name": "groundspec",
-        "sha256": "c6657f8ca79ad1178aecf5252091232b3e0d3c5f90431642e1ac1017405dbbe0",
+        "sha256": "161311a7369372043dd1f8780650f772bf5fdcabc4f84961d9a0f2e4ed976418",
         "size": 3605058
       }
     },
@@ -26,7 +26,7 @@
       },
       "artifact": {
         "name": "groundspec",
-        "sha256": "3e14a6b9d92a7716476eb8b6aa38c3b13156d6f8a0d86d9ec960adceb17691c9",
+        "sha256": "5ac039f6ddcf154369b6d5c944ea25d6433f03626ac167a6540a8aa64dc66930",
         "size": 3847344
       }
     },
@@ -38,7 +38,7 @@
       },
       "artifact": {
         "name": "groundspec",
-        "sha256": "ee4329ddea3b5e23a43aed060536578a5d7a830236af3159b289704c66a63e3d",
+        "sha256": "4bf44b19b3365caa50f340b504cd7a85f68d65e5ebac62b9a25596abcdd08c7b",
         "size": 3604640
       }
     },
@@ -50,7 +50,7 @@
       },
       "artifact": {
         "name": "groundspec",
-        "sha256": "e0d454d58df30f44323545ddacac51cc802d4ea2e9555d13fdb0b6fc739f6f15",
+        "sha256": "b0d98b9c3efb214c4bec7554d0c7add097c784085660a0ded3dad473a377c5dd",
         "size": 3842208
       }
     },
@@ -62,8 +62,8 @@
       },
       "artifact": {
         "name": "groundspec.exe",
-        "sha256": "777ad15954f0cf91aed939f27ae98c20127fe8701bfc260794b3efdf4c89e904",
-        "size": 3996672
+        "sha256": "431569da42e33415a80a9ac04d973e7f0e6e95739caac8dfc847ee9df3a29c60",
+        "size": 3997696
       }
     }
   ],

@@ -13,15 +13,15 @@
     "auth": "authenticated",
     "ready": true
   },
-  "summary": "Completed and verified the PB-30 release slice: module-installed binaries resolve their version, release configuration is regression-tested, and protected artifacts remain unchanged. Existing workflow/CLI edits were preserved; release tests were added. Action versions were cross-checked against official GitHub action sources.",
+  "summary": "Finalized the approved implementation’s CLI help: review syntax now matches the actual flag-based interface, with regression coverage. Protected files were not modified; existing unrelated worktree changes were preserved.",
   "artifacts": [
     {
       "path": ".github/workflows/ci.yml",
-      "digest": "519853cecb3a8bf4de41248a80c3d1e3165df800686a45d02fb60c65ec7e8881"
+      "digest": "8454393159ae8f8a6c71dfc6625afd77b553aded590827645b2ee41bd21dfde8"
     },
     {
       "path": ".github/workflows/release.yml",
-      "digest": "016b82bb596184a1aacbf04c71388c93ae8f39a22b476c43d3ecf0812cb99e31"
+      "digest": "c7efc28e03e7759c5399114eb46eb916d886f6d6d05aa76d67a38203dd8d0ad1"
     },
     {
       "path": ".gitignore",
@@ -37,7 +37,7 @@
     },
     {
       "path": "README.md",
-      "digest": "2bbcfa56076decf57064d23a57dfc203306cbb33e51274908a90bfb71d444f81"
+      "digest": "b691be48536f7a41246cb5d22b8e4582dd59bab9295e12415f7c3a70bf23464f"
     },
     {
       "path": "TEST_SPEC.md",
@@ -89,7 +89,7 @@
     },
     {
       "path": "docs/getting-started.md",
-      "digest": "b536aa1aee5977f425aea2ebc66322c2d0093b40457b5a142c1f887a3a6d15f6"
+      "digest": "11966170a7401c42eb780f632d67df12b07eaa5c63321c372e07ecb80e5354e1"
     },
     {
       "path": "go.mod",
@@ -117,7 +117,7 @@
     },
     {
       "path": "internal/core/cli.go",
-      "digest": "4fb6c4c0a1eef82d4aa8d243b4613a0d701ee04fffc44712aeebe347c436688a"
+      "digest": "8d27aaa6bcb5dbe3c1fd4649cc6e1d0176d1bf181ce47fc6ce20bde8e9aeff71"
     },
     {
       "path": "internal/core/core.go",
@@ -125,7 +125,7 @@
     },
     {
       "path": "internal/core/core_test.go",
-      "digest": "ff497cf30a49678f9da3587811488db8869cd537884e74bd2196b6a8748b5f44"
+      "digest": "caa31d8d42f05aaf0c393a719af6197fac6685c13972b80a838f050e72e03a26"
     },
     {
       "path": "internal/intake/intake.go",
@@ -302,37 +302,59 @@
   ],
   "changes": [
     {
+      "path": "internal/core/cli.go",
+      "kind": "modified",
+      "beforeDigest": "fd3c5494443878fa2a756ed1b31303c5de5e8b6794a2103165a95d2192983b8b",
+      "afterDigest": "8d27aaa6bcb5dbe3c1fd4649cc6e1d0176d1bf181ce47fc6ce20bde8e9aeff71"
+    },
+    {
       "path": "internal/core/core_test.go",
       "kind": "modified",
-      "beforeDigest": "10f39698e2b9abf3a5b4f0b3dacd7eacf594f7dc389a543336c03bd72f24b58c",
-      "afterDigest": "ff497cf30a49678f9da3587811488db8869cd537884e74bd2196b6a8748b5f44"
+      "beforeDigest": "3e7a900867123256a0cc5b56320964550897b32282e5d60aa3cbe7f96287061f",
+      "afterDigest": "caa31d8d42f05aaf0c393a719af6197fac6685c13972b80a838f050e72e03a26"
     }
   ],
   "reportedChecks": [
     {
       "command": "go test ./...",
-      "result": "Passed using task-local Go caches."
+      "result": "Passed all Go packages using writable sandbox caches."
     },
     {
-      "command": "go vet ./... \u0026\u0026 go build ./cmd/groundspec",
-      "result": "Passed using task-local Go caches; binary output directed to /tmp."
+      "command": "go vet ./...",
+      "result": "Passed."
     },
     {
-      "command": "release version-stamp smoke test",
-      "result": "Passed; output: groundspec v0.0.0-test."
+      "command": "go build ./cmd/groundspec",
+      "result": "Passed."
     },
     {
-      "command": "V-04 through V-07 Bun verification scripts",
-      "result": "All passed, including contract pin, contract links/impact, and publication audit."
+      "command": "bun run scripts/verify-contract-pin.js",
+      "result": "Passed; exact mermaid-spec commit verified."
+    },
+    {
+      "command": "bun run scripts/contracts-verify.js",
+      "result": "Passed; 13 examples, 6 generated artifacts, and 8 trace links verified."
+    },
+    {
+      "command": "bun run scripts/contracts-impact.smoke.js",
+      "result": "Passed."
+    },
+    {
+      "command": "bun run scripts/publication-audit.js",
+      "result": "Passed; 108 allowlisted files verified."
     },
     {
       "command": "npm test",
-      "result": "Passed: 20 tests, 1 platform-specific skip."
+      "result": "Passed: 20 tests; 1 platform-specific test skipped."
     },
     {
-      "command": "git diff --check and protected artifact SHA-256 checks",
-      "result": "Passed; approved proposal, review, project context, and protected documents are unchanged."
+      "command": "go install ./cmd/groundspec; groundspec --version; groundspec --help",
+      "result": "Passed in an isolated GOBIN; version and actionable help rendered correctly."
+    },
+    {
+      "command": "git diff --check",
+      "result": "Passed."
     }
   ],
-  "recordedAt": "2026-08-31T22:18:28.594005Z"
+  "recordedAt": "2026-08-31T22:48:31.37173Z"
 }

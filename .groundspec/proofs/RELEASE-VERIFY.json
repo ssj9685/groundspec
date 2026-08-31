@@ -1,11 +1,11 @@
 {
   "version": 1,
   "node": "RELEASE-VERIFY",
-  "digest": "b4d5546fb182c42705d3d97e2e4f1d21388cd3222a7bf5a4675f7a7778f12690",
+  "digest": "d5b0fbcb43a19802c4f28610f73e50f9e49404348399474bdc5ddf6f2c38e069",
   "result": "passed",
-  "recordedAt": "2026-08-31T22:20:27.094002Z",
+  "recordedAt": "2026-08-31T22:49:07.581603Z",
   "evidence": {
     "path": ".groundspec/evidence/groundspec-release-matrix.json",
-    "digest": "85ecbb5dd75ccafc6d4a981e370efa298e900e02f5c13a6c5f345ac305b3b31d"
+    "digest": "2d2e15485f8887a1dbbcb07ae9ab475f37f9b8ad2b7792b5834221e155817f55"
   }
 }

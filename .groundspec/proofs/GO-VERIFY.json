@@ -1,11 +1,11 @@
 {
   "version": 1,
   "node": "GO-VERIFY",
-  "digest": "3c918b87bb1439ae5753497c12830de678392d6bd3966bddabbc2cd8875f6323",
+  "digest": "14409c9681c3bfb744e5d941154015d5297a5e893235b84048327a0ef5e8bc04",
   "result": "passed",
-  "recordedAt": "2026-08-31T22:20:27.036202Z",
+  "recordedAt": "2026-08-31T22:49:07.42119Z",
   "evidence": {
     "path": ".groundspec/evidence/go-tests.json",
-    "digest": "6072a198088fad27ce376db1d8bfe113064d24544e22ae3a5584a6d57cbc2755"
+    "digest": "bbb9c72ca84ca55a56a694095df92665d471392454b4535399440333fcd4a0ce"
   }
 }

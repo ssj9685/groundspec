@@ -14,12 +14,22 @@ Deterministic intake, validation, rendering, graph evaluation, and evidence bind
 
 ## Install
 
-With Go 1.27 or newer:
+With Go 1.27 or newer, copy and paste the complete block below into Bash or Zsh. It installs GroundSpec, adds Go's install directory to the current shell, and verifies the result:
 
 ```shell
 go install github.com/ssj9685/groundspec/cmd/groundspec@latest
+
+groundspec_bin_dir="$(go env GOBIN)"
+if [ -z "$groundspec_bin_dir" ]; then
+  groundspec_bin_dir="$(go env GOPATH)/bin"
+fi
+export PATH="$groundspec_bin_dir:$PATH"
+
+groundspec --version
 groundspec --help
 ```
+
+Successful installation prints `groundspec v0.1.0` or a newer version before the command guide. The `export` applies to the current terminal; add the resolved directory to your shell profile to keep it available in new terminals. PowerShell instructions and command-not-found recovery are in [Getting started](./docs/getting-started.md#1-install).
 
 Alternatively, download a checksummed self-contained archive from [GitHub Releases](https://github.com/ssj9685/groundspec/releases). The released CLI does not require Node.js or Bun. PDF intake additionally uses a locally installed `pdftotext` command.
 
