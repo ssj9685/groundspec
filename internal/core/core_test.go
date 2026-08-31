@@ -302,13 +302,66 @@ func TestPB30HelpAndVersionAreInstallSmokeInterfaces(t *testing.T) {
 		arguments []string
 		contains  string
 	}{
-		{arguments: []string{"--help"}, contains: "usage: groundspec"},
+		{arguments: []string{"--help"}, contains: "Usage:\n  groundspec"},
 		{arguments: []string{"--version"}, contains: "groundspec dev"},
 	} {
 		var output bytes.Buffer
 		code, err := Execute(test.arguments, t.TempDir(), &output)
 		if err != nil || code != 0 || !strings.Contains(output.String(), test.contains) {
 			t.Fatalf("Execute(%v) = code %d, output %q, err %v", test.arguments, code, output.String(), err)
+		}
+	}
+}
+
+func TestPB30HelpIsReadableAndActionable(t *testing.T) {
+	var output bytes.Buffer
+	code, err := Execute([]string{"--help"}, t.TempDir(), &output)
+	if err != nil || code != 0 {
+		t.Fatalf("help = code %d, err %v", code, err)
+	}
+	help := output.String()
+	for _, required := range []string{
+		"GroundSpec turns source material",
+		"Usage:\n  groundspec <command> [options]",
+		"Start a workflow:",
+		"Review and plan:",
+		"Implement and verify:",
+		"(--accept <id> | --reject <id> | --resolve <id> --answer <text>)",
+		"groundspec init ./requirements.md --adapter codex-cli",
+		"Documentation: https://github.com/ssj9685/groundspec",
+	} {
+		if !strings.Contains(help, required) {
+			t.Fatalf("help is missing %q:\n%s", required, help)
+		}
+	}
+	if strings.Contains(help, " | groundspec ") {
+		t.Fatalf("help regressed to a single command chain:\n%s", help)
+	}
+}
+
+func TestPB30InstallDocumentationIncludesGoBinPathRecovery(t *testing.T) {
+	_, currentFile, _, ok := runtime.Caller(0)
+	if !ok {
+		t.Fatal("cannot locate test file")
+	}
+	root := filepath.Clean(filepath.Join(filepath.Dir(currentFile), "..", ".."))
+	for _, name := range []string{"README.md", "docs/getting-started.md"} {
+		contents, err := os.ReadFile(filepath.Join(root, filepath.FromSlash(name)))
+		if err != nil {
+			t.Fatal(err)
+		}
+		document := string(contents)
+		for _, required := range []string{
+			"go install github.com/ssj9685/groundspec/cmd/groundspec@latest",
+			"go env GOBIN",
+			"go env GOPATH",
+			"export PATH=",
+			"groundspec --version",
+			"groundspec --help",
+		} {
+			if !strings.Contains(document, required) {
+				t.Fatalf("%s is missing install recovery %q", name, required)
+			}
 		}
 	}
 }
@@ -385,6 +438,9 @@ func TestPB30ReleaseConfigurationMatchesDeclaredTargets(t *testing.T) {
 		"CGO_ENABLED=0",
 		"internal/core.Version=${version}",
 		"sha256sum * > checksums.txt",
+		"actions/upload-artifact@v7",
+		"actions/download-artifact@v7",
+		"softprops/action-gh-release@v3",
 	} {
 		if !strings.Contains(releaseWorkflow, required) {
 			t.Fatalf("release workflow is missing %q", required)
@@ -395,8 +451,15 @@ func TestPB30ReleaseConfigurationMatchesDeclaredTargets(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if !strings.Contains(string(ciBytes), "go install ./cmd/groundspec") {
-		t.Fatal("CI does not verify the documented source installation path")
+	ciWorkflow := string(ciBytes)
+	for _, required := range []string{
+		"go install ./cmd/groundspec",
+		`"$(go env GOPATH)/bin/groundspec" --version`,
+		`"$(go env GOPATH)/bin/groundspec" --help`,
+	} {
+		if !strings.Contains(ciWorkflow, required) {
+			t.Fatalf("CI source-install smoke test is missing %q", required)
+		}
 	}
 	licenseBytes, err := os.ReadFile(filepath.Join(root, "LICENSE"))
 	if err != nil {

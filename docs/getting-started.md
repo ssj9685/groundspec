@@ -4,8 +4,60 @@ GroundSpec turns source evidence into reviewed specifications, implementation wo
 
 ## 1. Install
 
+### macOS or Linux
+
+Copy and paste the complete block into Bash or Zsh:
+
 ```shell
 go install github.com/ssj9685/groundspec/cmd/groundspec@latest
+
+groundspec_bin_dir="$(go env GOBIN)"
+if [ -z "$groundspec_bin_dir" ]; then
+  groundspec_bin_dir="$(go env GOPATH)/bin"
+fi
+export PATH="$groundspec_bin_dir:$PATH"
+
+groundspec --version
+groundspec --help
+```
+
+Go installs commands into `GOBIN`, or into `GOPATH/bin` when `GOBIN` is empty. The block adds that directory to the current terminal before invoking GroundSpec. A successful installation prints `groundspec v0.1.0` or a newer version.
+
+To keep the command available in new Zsh terminals, run this block once:
+
+```shell
+groundspec_bin_dir="$(go env GOBIN)"
+if [ -z "$groundspec_bin_dir" ]; then
+  groundspec_bin_dir="$(go env GOPATH)/bin"
+fi
+printf '\nexport PATH="%s:$PATH"\n' "$groundspec_bin_dir" >> ~/.zshrc
+source ~/.zshrc
+```
+
+### Windows PowerShell
+
+Copy and paste the complete block into PowerShell:
+
+```powershell
+go install github.com/ssj9685/groundspec/cmd/groundspec@latest
+
+$groundspecBinDir = go env GOBIN
+if (-not $groundspecBinDir) {
+  $groundspecBinDir = Join-Path (go env GOPATH) "bin"
+}
+$env:Path = "$groundspecBinDir;$env:Path"
+
+groundspec --version
+groundspec --help
+```
+
+The PATH update applies to the current PowerShell session.
+
+### Connect an agent
+
+After `groundspec --help` succeeds:
+
+```shell
 codex login
 groundspec adapters
 ```

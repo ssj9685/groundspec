@@ -17,7 +17,53 @@ import (
 	"github.com/ssj9685/groundspec/internal/workflow"
 )
 
-const usageText = "usage: groundspec adapters [--json] | groundspec start <source> --output <directory> [--adapter id] [--json] | groundspec init <source> [--output directory] [--adapter id] [--json] | groundspec ingest <source> [--json] | groundspec draft <bundle> --output <proposal> [--adapter id] [--json] | groundspec proposal validate <proposal> [--json] | groundspec review <proposal> [--review path] (--accept id | --reject id | --resolve id --answer text) [--note text] [--json] | groundspec status <proposal> [--review path] [--json] | groundspec materialize <proposal> [--review path] [--output path] [--adapter id] [--json] | groundspec implement <plan> [--output path] [--adapter id] [--json] | groundspec verify <plan> [--implementation path] [--output path] [--json] | groundspec lifecycle [--proposal path] [--review path] [--plan path] [--implementation path] [--verification path] [--graph path] [--json] | groundspec check [--graph path] [--json] | groundspec attest <node> --result passed|failed [--evidence path] [--note text] [--graph path] [--json]"
+const usageText = `GroundSpec turns source material into reviewed implementation work.
+
+Usage:
+  groundspec <command> [options]
+
+Start a workflow:
+  adapters [--json]
+      List compatible authenticated agent CLIs.
+  init <source> [--output <directory>] [--adapter <id>] [--json]
+      Initialize GroundSpec inside an existing project.
+  start <source> --output <directory> [--adapter <id>] [--json]
+      Create a new isolated GroundSpec workspace.
+  ingest <source> [--json]
+      Extract deterministic blocks from HTML, Markdown, text, or PDF.
+
+Review and plan:
+  draft <bundle> --output <proposal> [--adapter <id>] [--json]
+      Ask an adapter to propose source-linked requirements.
+  proposal validate <proposal> [--json]
+      Validate proposal structure and source provenance.
+  review <proposal> [--review <path>]
+      (--accept <id> | --reject <id> | --resolve <id> --answer <text>) [--note <text>] [--json]
+      Record one decision or question resolution in the separate review artifact.
+  status <proposal> [--review <path>] [--json]
+      Show unresolved review decisions and questions.
+  materialize <proposal> [--review <path>] [--output <path>] [--adapter <id>] [--json]
+      Write reviewed specification, design, test, and implementation plans.
+
+Implement and verify:
+  implement <plan> [--output <path>] [--adapter <id>] [--json]
+      Explicitly delegate implementation and record changed artifacts.
+  verify <plan> [--implementation <path>] [--output <path>] [--json]
+      Run only reviewed argv verification commands.
+  lifecycle [--graph <path>] [--json]
+      Report the next required workflow stage or terminal completion.
+  check [--graph <path>] [--json]
+      Check whether every proof-bearing graph node has current evidence.
+  attest <node> --result passed|failed [--evidence <path>] [--note <text>] [--graph <path>] [--json]
+      Record fresh evidence for one graph node.
+
+Examples:
+  groundspec adapters
+  groundspec init ./requirements.md --adapter codex-cli
+  groundspec status .groundspec/proposal.json
+  groundspec lifecycle
+
+Documentation: https://github.com/ssj9685/groundspec`
 
 const defaultReviewPath = ".groundspec/review.json"
 

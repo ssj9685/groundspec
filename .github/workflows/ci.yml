@@ -30,6 +30,7 @@ jobs:
       - run: go build -trimpath ./cmd/groundspec
       - run: go install ./cmd/groundspec
       - run: |
+          "$(go env GOPATH)/bin/groundspec" --version
           "$(go env GOPATH)/bin/groundspec" --help
       - run: npm test
       - run: bun run contracts:verify
